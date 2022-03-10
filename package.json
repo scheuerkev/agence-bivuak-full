@@ -1,0 +1,28 @@
+{
+  "name": "agence-bivuak-full",
+  "version": "1.0.0",
+  "description": "A full pug express mongo app of the Bivuak Agency",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "sass": "sass "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scheuerkev/agence-bivuak-full.git"
+  },
+  "author": "Kévin Scheuer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scheuerkev/agence-bivuak-full/issues"
+  },
+  "homepage": "https://github.com/scheuerkev/agence-bivuak-full#readme",
+  "dependencies": {
+    "eslint": "^8.10.0",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "pug": "^3.0.2"
+  }
+}
