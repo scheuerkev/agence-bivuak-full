@@ -1,0 +1,80 @@
+//1440p
+@media screen and (max-width: 1440px) {
+  .value-proposition {
+    &--title {
+      width: 44%;
+    }
+
+    &--image {
+      height: 75%;
+    }
+  }
+  .btn-container {
+    width: 25%;
+  }
+
+  .btn {
+    font-size: 1.7rem;
+  }
+}
+
+//1200p
+@media screen and (max-width: 1200px) {
+  .navbar {
+    padding: 0 5rem;
+  }
+
+  .value-proposition {
+    &--intro {
+      width: 100%;
+    }
+
+    &--title {
+      width: 70%;
+    }
+
+    &--image {
+      height: 55%;
+    }
+  }
+
+  .btn-container {
+    width: 33%;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+  }
+
+  .page-container {
+    padding: 0 7rem;
+  }
+
+  .grid-container {
+    grid-gap: 5rem;
+  }
+
+  .page02 {
+    p {
+      line-height: 1.5;
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      margin-top: 1rem;
+    }
+
+    li {
+      font-size: 1.4rem;
+      margin-top: 1rem;
+    }
+  }
+
+  .row {
+    flex-direction: column;
+
+    form {
+      margin-top: 5rem;
+    }
+  }
+}

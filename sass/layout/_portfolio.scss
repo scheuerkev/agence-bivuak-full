@@ -1,0 +1,30 @@
+.portfolio {
+  &-grid {
+    display: grid;
+    margin-top: 7rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3rem;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 400px;
+      height: 750px;
+      background: url(../assets/img/nautical_chart.webp) no-repeat right/contain;
+      position: absolute;
+      right: 0;
+      z-index: -100;
+      opacity: 0.04;
+    }
+  }
+
+  &-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  &-title {
+    width: 50%;
+  }
+}

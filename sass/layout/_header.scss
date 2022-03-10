@@ -1,0 +1,51 @@
+header {
+  height: 70px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, transparent, $secondary-cambodge);
+  padding: 0 20px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 900px;
+    height: 900px;
+    background: url(/img/barry.webp) no-repeat right / contain;
+    position: absolute;
+    top: -60px;
+    right: 0;
+    opacity: 0.03;
+    z-index: -99;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1150px;
+    width: 100%;
+  }
+
+  .navbar-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+  }
+}
+
+.navbar-item {
+  transition: all 320ms ease-in-out;
+
+  &:hover {
+    transform: translateX(3px);
+  }
+
+  a {
+    &:hover {
+      color: $secondary-mahogany;
+    }
+  }
+}

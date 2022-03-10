@@ -1,0 +1,39 @@
+.howto {
+  position: relative;
+  height: calc(100vh - 3rem);
+
+  h2 {
+    margin-top: 3rem;
+  }
+
+  img {
+    box-shadow: 6px 6px 0 0 $secondary-cambodge;
+  }
+}
+
+.grid-container {
+  margin-top: 7rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &-list {
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    i {
+      margin-right: 1rem;
+      color: $secondary-mahogany;
+      opacity: 1;
+    }
+  }
+}
