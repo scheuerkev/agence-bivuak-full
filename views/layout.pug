@@ -1,0 +1,30 @@
+doctype html 
+html(lang='fr')
+	head
+		//meta tags 
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(name="msapplication-TileColor" content="#ffc40d")
+		meta(name="theme-color" content="#ffffff")
+	
+		//CDN links tags
+		link(rel="preconnect" href="https://fonts.googleapis.com")
+		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Open+Sans:wght@400;500;700&family=Roboto:wght@300&display=swap")
+	
+		//static links tags
+		link(rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png")
+		link(rel="icon" sizes="32x32" href="favicon/favicon-32x32.png")
+		link(rel="icon" sizes="16x16" href="favicon/favicon-16x16.png")
+		link(rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5")
+		link(rel="manifest" href="favicon/site.webmanifest")
+		link(rel="stylesheet" href="css/normalize.css")
+		link(rel="stylesheet" href="css/style.css")
+
+		//vendor scripts
+		script(src="https://kit.fontawesome.com/e7afc03f4f.js" crossorigin="anonymous" defer)
+  
+		body 
+			include includes/navbar.pug
+				block content 
