@@ -7,19 +7,6 @@ header {
   background: linear-gradient(to top, transparent, $secondary-cambodge);
   padding: 0 20px;
 
-  &::after {
-    content: "";
-    display: block;
-    width: 900px;
-    height: 900px;
-    background: url(/img/barry.webp) no-repeat right / contain;
-    position: absolute;
-    top: -60px;
-    right: 0;
-    opacity: 0.03;
-    z-index: -99;
-  }
-
   .navbar {
     display: flex;
     justify-content: space-between;

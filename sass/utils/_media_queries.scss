@@ -1,25 +1,42 @@
-//1440p
-@media screen and (max-width: 1440px) {
-  .value-proposition {
-    &--title {
-      width: 44%;
+//2560p
+@media screen and (min-width: 1440px) {
+  .page-container {
+    max-width: 1300px;
+  }
+
+  header .navbar {
+    max-width: 1250px;
+
+    a {
+      font-size: 1.7rem;
     }
+  }
+
+  .value-proposition {
+    /*&--intro {
+      font-size: 2.7rem;
+      line-height: 6.2rem;
+    }
+
+    &--title {
+      font-size: 9rem;
+      line-height: 14rem;
+    }*/
 
     &--image {
-      height: 75%;
+      height: 40%;
     }
   }
-  .btn-container {
-    width: 25%;
-  }
+}
 
+//1440p
+@media screen and (max-width: 1439px) {
   .btn {
     font-size: 1.7rem;
   }
 }
-
 //1200p
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1299px) {
   .navbar {
     padding: 0 5rem;
   }
@@ -31,10 +48,6 @@
 
     &--title {
       width: 70%;
-    }
-
-    &--image {
-      height: 55%;
     }
   }
 
@@ -76,5 +89,73 @@
     form {
       margin-top: 5rem;
     }
+  }
+}
+
+//1080p
+@media screen and (max-width: 1079px) {
+  .value-proposition {
+    &--image {
+      display: none;
+    }
+
+    &--title {
+      width: 100%;
+    }
+  }
+
+  .btn-main {
+    min-width: 310px;
+  }
+
+  .btn-container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .footer-container {
+    font-size: 1rem;
+    letter-spacing: 0;
+    padding: 0 2rem;
+    gap: 2rem;
+  }
+}
+
+//768p
+@media screen and (max-width: 785px) {
+  .value-proposition {
+    &--title {
+      font-size: 5.4rem;
+    }
+  }
+
+  .btn-container {
+    flex-direction: column;
+  }
+
+  footer {
+    padding: 2rem;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 0;
+
+    img {
+      order: 1;
+    }
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: center;
+  }
+
+  .footer-left {
+    order: 2;
+  }
+
+  .footer-right {
+    order: 3;
   }
 }

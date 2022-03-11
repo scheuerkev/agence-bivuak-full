@@ -24,4 +24,8 @@ router.get("/contact", (req, res) => {
   res.render("pages/contact");
 });
 
+router.get("*", (req, res) => {
+  res.render("pages/404");
+});
+
 module.exports = router;
