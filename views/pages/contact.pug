@@ -1,0 +1,28 @@
+extends ../layout.pug 
+
+block content 
+	main
+		section.page05 
+			.page-container 
+				#text-decoration
+					span.navigation-page01 05 _ somewhere we belong 
+					i.fa-solid.fa-arrow-down-long.fa-2x.scroll
+				.page.contact#contact 
+					h2.page-title Contactez l'Agence Bivuak !
+					.row 
+						.location-card
+							iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d369293.7800136512!2d4.244738568889165!3d43.68752521331356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2ec758b303a8c90b%3A0x1f6aabdf33f85689!2sAgence%20Bivuak%20-%20Web%20%7C%20SEO%20%7C%20R%C3%A9f%C3%A9rencement!5e0!3m2!1sfr!2sfr!4v1646676439591!5m2!1sfr!2sfr" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy")
+							p.location-details AGENCE BIVUAK | SIRET : 794 212 506 00032 23, rue Biron 34190 GANGES +33 6 14 22 27 13
+							form.contact-form(action="POST")
+								.input-container 
+									label(for="name") Votre nom : 
+									input#name_input(type="text" name="name")
+								.input-container 
+									label(for="name") Votre email : 
+									input#name_input(type="text" name="email")
+								.input-container 
+									label(for="name") Votre message : 
+									input#name_input(type="text" name="message")
+								.btn-form-container 
+									.btn-main Remettre à zéro 
+									.btn-main Envoyer		

@@ -5,22 +5,21 @@
   justify-content: space-around;
 
   &--intro {
-    width: 80%;
     font-size: 1.5rem;
     line-height: 3rem;
   }
 
   &--title {
-    width: 50%;
+    width: 65%;
     font-size: 5rem;
     line-height: 6rem;
   }
 
   &--image {
     position: absolute;
-    bottom: 0;
+    bottom: 6px;
     right: 0;
-    height: 90%;
+    height: 70%;
   }
 
   &--illustration {
