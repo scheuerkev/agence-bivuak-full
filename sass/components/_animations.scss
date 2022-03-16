@@ -1,0 +1,152 @@
+/*.flip-box {
+  background-color: transparent;
+  width: 220px;
+  max-width: 220px;
+  height: auto;
+  perspective: 1000px;
+
+  &-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 550ms ease-in-out;
+    transform-style: preserve-3d;
+  }
+
+  &:hover &-inner {
+    transform: rotateY(180deg);
+  }
+
+  &-front,
+  &-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  &-front {
+    background-color: $secondary-cambodge;
+    color: $primary-black;
+  }
+
+  &-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }
+}*/
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 370px;
+  box-shadow: 6px 6px 0 0 hsl(39, 100%, 47%);
+
+  &[data-order="1"] {
+    &::after {
+      content: "";
+      background-color: hsla(39, 100%, 47%, 0.7);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform: translateX(-500px);
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      animation: fadeBoxShadow 200ms ease-in-out forwards;
+
+      &::after {
+        animation: appearFromLeft 250ms cubic-bezier(0.215, 0.61, 0.355, 1) 50ms
+          forwards;
+      }
+    }
+  }
+
+  &[data-order="2"] {
+    &::after {
+      content: "";
+      background-color: hsla(39, 100%, 47%, 0.7);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform: translateY(-500px);
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      animation: fadeBoxShadow 200ms ease-in-out forwards;
+
+      &::after {
+        animation: appearFromTop 250ms cubic-bezier(0.215, 0.61, 0.355, 1) 50ms
+          forwards;
+      }
+    }
+  }
+
+  &[data-order="3"] {
+    &::after {
+      content: "";
+      background-color: hsla(39, 100%, 47%, 0.7);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform: translateY(500px);
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      animation: fadeBoxShadow 200ms ease-in-out forwards;
+
+      &::after {
+        animation: appearFromRight 250ms cubic-bezier(0.215, 0.61, 0.355, 1)
+          50ms forwards;
+      }
+    }
+  }
+}
+
+@keyframes appearFromLeft {
+  from {
+    transform: translateX(-500px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes appearFromTop {
+  from {
+    transform: translateY(-500px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes appearFromRight {
+  from {
+    transform: translateX(500px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadeBoxShadow {
+  from {
+    box-shadow: 6px 6px 0 0 hsl(39, 100%, 47%);
+  }
+
+  to {
+    box-shadow: 0px 0px 0px 0px transparent;
+  }
+}

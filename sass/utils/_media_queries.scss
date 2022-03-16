@@ -112,10 +112,8 @@
     }
   }
 
-  .homecard {
-    img {
-      max-width: 290px;
-    }
+  .img-container {
+    max-width: 290px;
   }
 
   .contact-card {
@@ -175,83 +173,81 @@
   .grid-container {
     gap: 1.5rem;
   }
-  .homecard {
-    img {
-      max-width: 220px;
-      align-self: center;
-    }
+  .img-container {
+    max-width: 220px;
+    align-self: center;
+  }
+}
+
+.portfolio-grid {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  img {
+    max-width: 340px;
+  }
+}
+
+.whoami {
+  p:first-of-type {
+    max-width: 85%;
   }
 
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    img {
-      max-width: 340px;
-    }
+  p {
+    max-width: 95%;
   }
 
-  .whoami {
-    p:first-of-type {
-      max-width: 85%;
-    }
-
-    p {
-      max-width: 95%;
-    }
-
-    &::after {
-      width: 250px;
-      height: 250px;
-    }
+  &::after {
+    width: 250px;
+    height: 250px;
   }
+}
 
-  .contact-container {
-    flex-direction: column-reverse;
-    gap: 5rem;
-    margin-bottom: 4rem;
-  }
+.contact-container {
+  flex-direction: column-reverse;
+  gap: 5rem;
+  margin-bottom: 4rem;
+}
 
-  .contact-card {
-    max-width: 100%;
+.contact-card {
+  max-width: 100%;
 
-    p {
-      margin-bottom: 2rem;
-    }
+  p {
+    margin-bottom: 2rem;
   }
+}
 
-  .contact-container {
-    form::after {
-      width: 300px;
-      height: 300px;
-    }
+.contact-container {
+  form::after {
+    width: 300px;
+    height: 300px;
   }
+}
 
-  .location-card {
-    min-width: 100%;
-  }
+.location-card {
+  min-width: 100%;
+}
 
-  .contact-form {
-    textarea {
-      height: 7rem;
-    }
+.contact-form {
+  textarea {
+    height: 7rem;
   }
-  .btn-form-container {
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .btn-form {
-    min-width: 200px;
-    font-size: 1.6rem;
-    text-align: center;
-  }
+}
+.btn-form-container {
+  justify-content: space-evenly;
+  align-items: center;
+}
+.btn-form {
+  min-width: 200px;
+  font-size: 1.6rem;
+  text-align: center;
+}
 
-  .location-card {
-    ul {
-      margin-top: 2rem;
-    }
+.location-card {
+  ul {
+    margin-top: 2rem;
   }
 }
 
