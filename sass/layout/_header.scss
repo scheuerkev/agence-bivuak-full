@@ -1,29 +1,4 @@
-header {
-  height: 70px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to top, transparent, $secondary-cambodge);
-  padding: 0 20px;
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1150px;
-    width: 100%;
-  }
-
-  .navbar-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-  }
-}
-
-.navbar-item {
+.nav-item {
   transition: all 320ms ease-in-out;
 
   &:hover {
@@ -32,7 +7,11 @@ header {
 
   a {
     &:hover {
-      color: $secondary-mahogany;
+      color: $secondary-mahogany !important;
+    }
+
+    &:active {
+      color: $secondary-mahogany !important;
     }
   }
 }

@@ -1,15 +1,37 @@
 .contact {
-  height: calc(100vh - 150px);
+  min-height: calc(100vh - 150px);
 }
 
-.row {
+.iframe-container {
+  overflow: hidden;
+  position: relative;
+  padding-top: 56.25%;
+
+  iframe {
+    border: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.location-card {
+  min-width: 600px;
+
+  ul {
+    margin-top: 6rem;
+  }
+}
+
+.contact-container {
   margin-top: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   form {
-    max-width: 400px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -21,7 +43,7 @@
       display: block;
       width: 500px;
       height: 500px;
-      background: url(../assets/img/boussole.webp) no-repeat right/contain;
+      background: url(/img/boussole.webp) no-repeat right/contain;
       position: absolute;
       top: 0;
       right: 0;
@@ -36,8 +58,7 @@
 
   label {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 0.5rem;
     left: 0;
   }
 
@@ -51,7 +72,7 @@
   }
 
   input {
-    height: 3rem;
+    height: 4rem;
   }
 
   textarea {
@@ -59,8 +80,26 @@
   }
 }
 
+.btn-form {
+  min-width: 180px;
+  text-align: center;
+}
+
 .btn-form-container {
   display: flex;
   margin-top: 2rem;
   justify-content: space-between;
+}
+
+.contact-card {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: flex-start;
+
+  p {
+    margin-bottom: 5rem;
+    margin-top: 0;
+  }
 }

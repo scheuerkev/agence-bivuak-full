@@ -3,10 +3,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding-bottom: 4rem;
 
   &--intro {
     font-size: 1.7rem;
     line-height: 3.2rem;
+    padding-top: 2rem;
 
     &::after {
       content: "";
@@ -23,15 +25,15 @@
   }
 
   &--title {
-    font-size: 6rem;
-    line-height: 8rem;
+    font-size: 4.5rem;
+    line-height: 6rem;
   }
 
   &--image {
     position: absolute;
     bottom: 6px;
     right: 0;
-    height: 40%;
+    height: 45%;
   }
 }
 

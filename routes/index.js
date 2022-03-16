@@ -12,8 +12,8 @@ router.get("/portfolio", (req, res) => {
   res.render("pages/portfolio");
 });
 
-router.get("/stack", (req, res) => {
-  res.render("pages/stack");
+router.get("/pourquoi", (req, res) => {
+  res.render("pages/pourquoi");
 });
 
 router.get("/blog", (req, res) => {

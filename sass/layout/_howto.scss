@@ -1,6 +1,6 @@
 .howto {
   position: relative;
-  height: calc(100vh - 3rem);
+  min-height: calc(100vh - 3rem);
 
   h2 {
     margin-top: 3rem;
@@ -19,21 +19,33 @@
   grid-gap: 3rem;
 }
 
-.card {
+.homecard {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 
-  &-list {
-    font-size: 1.4rem;
+  img {
+    max-width: 370px;
+  }
+
+  &--excerpt {
+    position: relative;
+  }
+
+  &--list {
+    padding-left: 0;
+    font-size: 1.3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    i {
-      margin-right: 1rem;
-      color: $secondary-mahogany;
-      opacity: 1;
-    }
   }
+
+  li:not(:first-child) {
+    margin-top: 5px;
+  }
+}
+
+.highlight {
+  color: $secondary-cambodge;
+  font-weight: 500;
 }

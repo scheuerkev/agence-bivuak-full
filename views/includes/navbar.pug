@@ -1,16 +1,21 @@
 header 
-	nav.navbar 
-		ul.navbar-links
-			li.navbar-item 
-				a(href="/") Accueil
-			li.navbar-item
-				a(href="/prestation") Prestation web
-			li.navbar-item 
-				a(href="/portfolio") Portfolio
-			li.navbar-item 
-				a(href="/stack") Stack 
-			li.navbar-item 
-				a(href="/blog") Blog 
-			li.navbar-item 
-				a(href="/contact") Contact
-	img(src="img/logo_small.webp" alt="Logo de l'Agence Bivuak" width="50" height="50")
+	nav.navbar.navbar-expand-lg.navbar-light
+		.container-fluid.ms-4
+			a.navbar-brand(href="/")
+				img(src="img/logo_small.webp" alt="Logo de l'Agence Bivuak" width="50" height="50")
+			button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Déplier la navigation")
+				span.navbar-toggler-icon
+			.collapse.navbar-collapse#navbarNav 
+				ul.navbar-nav.me-auto.mb-2.mb-lg-0
+					li.nav-item.pe-5 
+						a.nav-link(href="/") Accueil
+					li.nav-item.pe-5
+						a.nav-link(href="/prestation") Prestation web
+					li.nav-item.pe-5
+						a.nav-link(href="/portfolio") Portfolio
+					li.nav-item.pe-5
+						a.nav-link(href="/pourquoi") Pourquoi ? 
+					li.nav-item.pe-5
+						a.nav-link(href="/blog") Blog
+					li.nav-item.pe-5
+						a.nav-link(href="/contact") Contact
