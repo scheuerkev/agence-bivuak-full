@@ -1,8 +1,7 @@
 const router = require("express").Router();
-const api = require("./api");
-const Article = require("../database/models/article.model");
+const blog = require("./blog");
 
-router.use("/api", api);
+router.use("/blog", blog);
 
 router.get("/", (req, res) => {
   res.render("pages/home");
@@ -20,18 +19,8 @@ router.get("/pourquoi", (req, res) => {
   res.render("pages/pourquoi");
 });
 
-router.get("/blog", (req, res) => {
-  Article.find({})
-    .exec()
-    .then((articles) => res.render("pages/blog", { articles }));
-});
-
 router.get("/contact", (req, res) => {
   res.render("pages/contact");
-});
-
-router.get("/blog/new", (req, res) => {
-  res.render("pages/blog/add-article");
 });
 
 router.get("*", (req, res) => {
