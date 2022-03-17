@@ -4,3 +4,12 @@
   align-items: center;
   justify-content: center;
 }
+
+.blog-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.article-container {
+  background-color: yellow;
+}

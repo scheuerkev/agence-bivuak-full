@@ -1,4 +1,4 @@
-extends ../../layout.pug 
+extends ../layout.pug 
 
 block content 
     main
@@ -6,7 +6,7 @@ block content
             .page-container 
                 .d-flex.flex-row.content.mx-auto
                     .flex-fill
-                        form.card(method="post" action="/api/articles")
+                        form.card(method="post" action="/blog/")
                             .card-header Écrire un article 
                             .card-body 
                                 .form-group

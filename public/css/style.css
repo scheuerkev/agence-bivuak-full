@@ -558,11 +558,25 @@ footer {
   text-align: right;
 }
 
+.blog-sidebar {
+  background-color: red;
+  min-width: 30%;
+}
+
 .add-article {
   min-height: calc(100vh - 150px);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.blog-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.article-container {
+  background-color: yellow;
 }
 
 @media screen and (min-width: 2500px) and (max-width: 2700px) {
