@@ -558,6 +558,13 @@ footer {
   text-align: right;
 }
 
+.add-article {
+  min-height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (min-width: 2500px) and (max-width: 2700px) {
   .page-container {
     max-width: 2400px;

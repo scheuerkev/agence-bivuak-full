@@ -1,0 +1,20 @@
+extends ../../layout.pug 
+
+block content 
+    main
+        section.add-article 
+            .page-container 
+                .d-flex.flex-row.content.mx-auto
+                    .flex-fill
+                        form.card(method="post" action="/api/articles")
+                            .card-header Écrire un article 
+                            .card-body 
+                                .form-group
+                                    input.form-control(name="title" placeholder="Le titre ici") 
+                                    textarea.form-control(name="content" placeholder="Le contenu ici")
+                                if errors 
+                                    ul.my-2 
+                                        each error in errors
+                                            li.text-danger= error    
+                                .w-100 
+                                    input.btn.btn-primary.ms-auto.d-block(type="submit" value="Poster")

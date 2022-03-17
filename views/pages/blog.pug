@@ -1,0 +1,13 @@
+extends ../layout.pug 
+
+block content 
+    main
+        section.add-article 
+            .page-container 
+                .d-flex.flex-row.content.mx-auto
+                    .flex-fill.d-flex.flex-column 
+                        if articles     
+                            each article in articles 
+                                .card.article-element 
+                                    .card-title= article.title 
+                                    .card-content= article.content
