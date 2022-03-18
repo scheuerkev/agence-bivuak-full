@@ -4,9 +4,10 @@ const errorHandler = require("errorhandler");
 const path = require("path");
 const index = require("./routes");
 require("./database");
+require("./bin/www");
 
 const app = express();
-const port = process.env.PORT || 3001;
+module.exports = app;
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -28,5 +29,3 @@ if (process.env.NODE_ENV === "development") {
     });
   });
 }
-
-app.listen(port);
