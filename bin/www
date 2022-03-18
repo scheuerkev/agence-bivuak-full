@@ -3,14 +3,19 @@ const url = require("url");
 const https = require("https");
 const http = require("http");
 const app = require("../app");
+const { portHttps } = require("../env/development");
 const env = require(`../env/${process.env.NODE_ENV}`);
 
 const httpServer = http
   .createServer((req, res) => {
-    res.writeHead("301", { Location: `https://${req.headers.host}${req.url}` });
+    res.writeHead("301", {
+      Location: `https://${req.headers.host.split(":")[0] + ":" + portHttps}${
+        req.url
+      }`,
+    });
     res.end();
   })
-  .listen(80);
+  .listen(env.portHttp);
 
 const httpsServer = https
   .createServer(
@@ -20,4 +25,4 @@ const httpsServer = https
     },
     app
   )
-  .listen(443);
+  .listen(env.portHttps);
