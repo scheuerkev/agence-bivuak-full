@@ -141,6 +141,10 @@ body {
     color: #ba3d03;
   }
 }
+.display-none {
+  display: none !important;
+}
+
 #text-decoration {
   position: absolute;
   top: 50%;
