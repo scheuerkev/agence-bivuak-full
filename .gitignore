@@ -1,4 +1,4 @@
 node_modules
 .env
-env
-ssl
+ssl/localhost.crt
+ssl/localhost.key
