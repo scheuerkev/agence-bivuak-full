@@ -1,15 +1,12 @@
 extends ../layout.pug 
 
-block content 
+block content
+    script(src="js/articles.js") 
     main
         section.add-article 
             .page-container
                 .blog-container 
-                    .article-container
-                        if articles     
-                                each article in articles 
-                                    article.article-card 
-                                        h1.article-card-title= article.title 
-                                        p.article-card-content= article.content
-                    include ../includes/sidebar.pug 
+                    .article-container#art
+                        include ../blog/article.pug
+                //include ../includes/sidebar.pug 
                         

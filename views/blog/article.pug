@@ -1,0 +1,8 @@
+if articles     
+    each article in articles 
+        article.article-card 
+            p.article-controls
+                a(href="/blog/edit/" + article._id) Éditer l'article 
+                button.btn.btn-danger.mt-2.float-right(articleid=article._id) X
+            h1.article-card-title= article.title 
+            p.article-card-content= article.content

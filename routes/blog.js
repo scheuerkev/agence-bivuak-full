@@ -3,10 +3,16 @@ const {
   createNewArticle,
   getAllArticles,
   articleNew,
+  articleEdit,
+  articleUpdate,
+  articleDelete,
 } = require("../controllers/blog");
 
-router.get("/new", createNewArticle);
+router.get("/new", articleNew);
 router.get("/", getAllArticles);
-router.post("/", articleNew);
+router.get("/edit/:articleId", articleEdit);
+router.delete("/:articleId", articleDelete);
+router.post("/update/:articleId", articleUpdate);
+router.post("/", createNewArticle);
 
 module.exports = router;

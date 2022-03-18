@@ -6,12 +6,14 @@ block content
             .page-container 
                 .d-flex.flex-row.content.mx-auto
                     .flex-fill
-                        form.card(method="post" action="/blog/")
+                        form.card(method="post" action= article._id ? "/blog/update/" + article._id : "/blog")
                             .card-header Écrire un article 
                             .card-body 
                                 .form-group
-                                    input.form-control(name="title" placeholder="Le titre ici") 
-                                    textarea.form-control(name="content" placeholder="Le contenu ici")
+                                    textarea.form-control(name="title" placeholder="Le titre ici")= article.title
+                                    //= article.title 
+                                    textarea.form-control(name="content" placeholder="Le contenu ici")= article.content
+                                    //= article.content
                                 if errors 
                                     ul.my-2 
                                         each error in errors

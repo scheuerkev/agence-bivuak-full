@@ -4,7 +4,8 @@
   "description": "A full pug express mongo app of the Bivuak Agency",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "NODE_ENV=development nodemon app.js",
+    "start:prod": "NODE_ENV=production nodemon app.js", 
     "sass": "sass ./sass/style.scss ./public/css/style.css --watch"
   },
   "repository": {
