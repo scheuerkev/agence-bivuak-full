@@ -2,6 +2,9 @@ extends ../layout.pug
 
 block content 
 	main
-		h1 Oh! You've just founded a 404 ! 
-		p Don't panic and find your way back 
-		a(href="/") Take me back from this hole
+		section 
+			.page-container.hole 
+				h1 Bien joué ! Vous venez juste de trouver une erreur 404 ! 
+				p Ne paniquez pas, on vous indique le chemin 
+				img(src="/img/lost_person.svg", alt="L'illustration d'une personne perdue")
+				a.d-block(href="/") Sortez moi de ce trou
