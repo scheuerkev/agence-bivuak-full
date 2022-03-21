@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=development nodemon bin/www",
     "start:prod": "NODE_ENV=production nodemon bin/www",
-    "sass": "sass ./sass/style.scss ./public/css/style.css --watch"
+    "sass": "sass ./sass/style.scss ./public/css/style.css --watch --style=compressed",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,7 @@
   },
   "author": "Kévin Scheuer",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/scheuerkev/agence-bivuak-full/issues"
   },
