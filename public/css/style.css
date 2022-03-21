@@ -364,17 +364,6 @@ main {
   font-weight: 500;
 }
 
-.portfolio {
-  /*&-image {
-    max-width: 290px;
-  }
-
-  &-card-container {
-    &:hover {
-      background-color: rgba(4, 3, 4, 0.3);
-    }
-  }*/
-}
 .portfolio-grid {
   display: grid;
   margin: 7rem 0 4rem 0;
@@ -519,6 +508,7 @@ main {
 .contact-container {
   margin-top: 5rem;
   display: flex;
+  flex-direction: row !important;
   justify-content: space-between;
   align-items: center;
 }
@@ -549,6 +539,7 @@ main {
   position: absolute;
   bottom: 0.5rem;
   left: 0;
+  transition: all 150ms ease-in;
 }
 .input-container input,
 .input-container textarea {
@@ -558,11 +549,28 @@ main {
   background: transparent;
   border-bottom: 2px solid #f09c00;
 }
+.input-container input:focus, .input-container input:valid {
+  outline: 0;
+}
+.input-container input:focus + label, .input-container input:valid + label {
+  transform: scale(0.65) translateY(-40px) translateX(-25px);
+  color: #f09c00;
+  font-weight: 700;
+}
 .input-container input {
   height: 4rem;
 }
 .input-container textarea {
   height: 10rem;
+  margin-top: 2rem;
+}
+.input-container textarea:focus, .input-container textarea:valid {
+  outline: 0;
+}
+.input-container textarea:focus + label, .input-container textarea:valid + label {
+  transform: scale(0.65) translateY(-155px) translateX(-34px);
+  color: #f09c00;
+  font-weight: 700;
 }
 
 .btn-form {
@@ -788,70 +796,75 @@ footer {
     max-width: 220px;
     align-self: center;
   }
-}
-.portfolio-grid {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 3rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-.portfolio-grid img {
-  max-width: 340px;
-}
 
-.whoami p:first-of-type {
-  max-width: 85%;
-}
-.whoami p {
-  max-width: 95%;
-}
-.whoami::after {
-  width: 250px;
-  height: 250px;
-}
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .portfolio-grid img {
+    max-width: 340px;
+  }
 
-.contact-container {
-  flex-direction: column-reverse;
-  gap: 5rem;
-  margin-bottom: 4rem;
-}
+  .whoami p:first-of-type {
+    max-width: 85%;
+  }
+  .whoami p {
+    max-width: 95%;
+  }
+  .whoami::after {
+    width: 250px;
+    height: 250px;
+  }
 
-.contact-card {
-  max-width: 100%;
-}
-.contact-card p {
-  margin-bottom: 2rem;
-}
+  .contact-container {
+    flex-direction: column-reverse !important;
+    gap: 5rem;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+  }
 
-.contact-container form::after {
-  width: 300px;
-  height: 300px;
-}
+  .contact-card {
+    max-width: 100%;
+  }
+  .contact-card p {
+    margin-bottom: 2rem;
+  }
 
-.location-card {
-  min-width: 100%;
-}
+  .contact-container form::after {
+    width: 300px;
+    height: 300px;
+  }
 
-.contact-form textarea {
-  height: 7rem;
-}
+  .location-card {
+    max-width: 600px;
+    width: 100%;
+  }
 
-.btn-form-container {
-  justify-content: space-evenly;
-  align-items: center;
-}
+  .contact-form textarea {
+    height: 7rem;
+  }
+  .contact-form textarea:focus + label, .contact-form textarea:valid + label {
+    transform: scale(0.65) translateY(-100px) translateX(-31px);
+  }
 
-.btn-form {
-  min-width: 200px;
-  font-size: 1.6rem;
-  text-align: center;
-}
+  .btn-form-container {
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
-.location-card ul {
-  margin-top: 2rem;
-}
+  .btn-form {
+    min-width: 200px;
+    font-size: 1.6rem;
+    text-align: center;
+  }
 
+  .location-card ul {
+    margin-top: 2rem;
+  }
+}
 @media screen and (max-width: 991px) {
   .whoami::after {
     content: none;
@@ -1017,6 +1030,10 @@ footer {
     flex-direction: column-reverse;
     gap: 2rem;
   }
+
+  .location-card {
+    min-width: 400px;
+  }
 }
 @media screen and (max-width: 485px) {
   .navbar {
@@ -1058,6 +1075,10 @@ footer {
   .btn-main {
     min-width: 0;
     font-size: 1.5rem;
+  }
+
+  .location-card {
+    min-width: 290px;
   }
 }
 

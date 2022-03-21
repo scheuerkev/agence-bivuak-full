@@ -28,6 +28,7 @@
 .contact-container {
   margin-top: 5rem;
   display: flex;
+  flex-direction: row !important;
   justify-content: space-between;
   align-items: center;
 
@@ -60,6 +61,7 @@
     position: absolute;
     bottom: 0.5rem;
     left: 0;
+    transition: all 150ms ease-in;
   }
 
   input,
@@ -72,11 +74,36 @@
   }
 
   input {
+    &:focus,
+    &:valid {
+      outline: 0;
+
+      & + label {
+        transform: scale(0.65) translateY(-40px) translateX(-25px);
+        color: $secondary-cambodge;
+        font-weight: 700;
+      }
+    }
+  }
+
+  input {
     height: 4rem;
   }
 
   textarea {
     height: 10rem;
+    margin-top: 2rem;
+
+    &:focus,
+    &:valid {
+      outline: 0;
+
+      & + label {
+        transform: scale(0.65) translateY(-155px) translateX(-34px);
+        color: $secondary-cambodge;
+        font-weight: 700;
+      }
+    }
   }
 }
 
