@@ -41,10 +41,6 @@ section {
   margin: auto;
 }
 
-.page {
-  min-height: 100vh;
-}
-
 body {
   background-color: #fafafa;
 }
@@ -368,12 +364,24 @@ main {
   font-weight: 500;
 }
 
+.portfolio {
+  /*&-image {
+    max-width: 290px;
+  }
+
+  &-card-container {
+    &:hover {
+      background-color: rgba(4, 3, 4, 0.3);
+    }
+  }*/
+}
 .portfolio-grid {
   display: grid;
   margin: 7rem 0 4rem 0;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 3rem;
+  text-align: center;
 }
 .portfolio-grid::after {
   content: "";
@@ -387,10 +395,44 @@ main {
   z-index: -100;
   opacity: 0.04;
 }
-.portfolio-image {
-  max-width: 290px;
-  border-radius: 20px;
-  box-shadow: 2px 2px 0px 3px rgba(0, 0, 0, 0.01);
+.portfolio .portfolio-title {
+  margin-top: 2rem;
+}
+
+.portfolio-card-container {
+  max-width: 340px;
+  max-height: 340px;
+  margin: auto;
+  position: relative;
+}
+.portfolio-card-container:hover {
+  cursor: pointer;
+}
+.portfolio-card-container:hover .portfolio-card-mask {
+  filter: contrast(1.3);
+  background-color: rgba(240, 156, 0, 0.5);
+}
+.portfolio-card-container:hover .portfolio-card-mask::after {
+  opacity: 0.9;
+}
+
+.portfolio-card-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 340ms ease-in-out;
+  background-color: rgba(240, 156, 0, 0);
+}
+.portfolio-card-mask::after {
+  content: url("/img/link-solid.svg");
+  width: 80px;
+  opacity: 0;
+  filter: invert(100%) sepia(56%) saturate(2%) hue-rotate(233deg) brightness(106%) contrast(101%);
 }
 
 .whoami::after {
