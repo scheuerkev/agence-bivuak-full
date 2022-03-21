@@ -18,8 +18,15 @@ header
 					li.nav-item.pe-5
 						a.nav-link(href="/blog") Blog
 					li.nav-item.pe-5
-						a.nav-link(href="/contact") Contact 
-				span.nav-item.me-2
-					a.nav-link(href="/user/connect") Connection admin
+						a.nav-link(href="/contact") Contact
+				if isAuthenticated 
+					span= currentUser.username
+					span 
+						a.nav-link(href='/auth/signout') Se déconnecter 
+				else 
+					span 
+						a.nav-link(href='/auth/signin/form') Se connecter
+					span 
+						a.nav-link(href='/auth/signup/form') S'inscrire
 					
 

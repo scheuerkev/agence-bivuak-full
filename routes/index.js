@@ -1,7 +1,11 @@
 const router = require("express").Router();
-const blog = require("./blog");
+const blog = require("./blog.routes");
+const users = require("./users.routes");
+const auth = require("./auth.routes");
 
 router.use("/blog", blog);
+router.use("/users", users);
+router.use("/auth", auth);
 
 router.get("/", (req, res) => {
   res.render("pages/home");

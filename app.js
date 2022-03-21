@@ -2,15 +2,19 @@ const express = require("express");
 const morgan = require("morgan");
 const errorHandler = require("errorhandler");
 const path = require("path");
-const index = require("./routes");
-require("./database");
-require("./bin/www");
+//require("./bin/www");
 
 const app = express();
 module.exports = app;
 
+require("./database");
+const index = require("./routes");
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
+
+require("./config/session.config");
+require("./config/passport.config");
 
 app.use(morgan("short"));
 app.use(express.static(path.join(__dirname, "public")));

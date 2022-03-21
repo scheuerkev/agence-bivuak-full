@@ -6,7 +6,7 @@ const {
   articleEdit,
   articleUpdate,
   articleDelete,
-} = require("../controllers/blog");
+} = require("../controllers/blog.controllers");
 
 router.get("/new", articleNew);
 router.get("/", getAllArticles);

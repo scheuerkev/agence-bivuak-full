@@ -1,0 +1,22 @@
+extends ../layout.pug 
+
+block content 
+    main
+        section 
+            .page-container 
+                .d-flex.flex-row.content.mx-auto
+                    .flex-fill
+                        form.card.w-50.mx-auto(method="post" action="/auth/signin")
+                            .card-header Se connecter
+                            .card-body 
+                                .form-group
+                                    label.form-label(for="email") Email
+                                    input.form-control(name="email" id="email" type="email")
+                                    label.form-label(for="password") Mot de passe
+                                    input.form-control(name="password" id="password" type="password")
+                                if errors 
+                                    ul.my-2 
+                                        each error in errors
+                                            li.text-danger= error    
+                                .w-100 
+                                    input.btn.btn-primary.ms-auto.d-block.mt-3(type="submit" value="Connexion")

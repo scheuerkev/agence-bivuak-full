@@ -11,7 +11,11 @@ const {
 exports.getAllArticles = async (req, res, next) => {
   try {
     const articles = await getArticles();
-    res.render("blog/blog", { articles });
+    res.render("blog/blog", {
+      articles,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   } catch (e) {
     next(e);
   }
@@ -23,23 +27,36 @@ exports.createNewArticle = async (req, res, next) => {
     const body = req.body;
     await createArticle(body);
     res.redirect("/blog");
-    console.log("Here");
   } catch (e) {
     const errors = Object.keys(e.errors).map((k) => e.errors[k].message);
-    res.status(400).render("blog/add-article", { errors });
+    res
+      .status(400)
+      .render("blog/add-article", {
+        errors,
+        isAuthenticated: req.isAuthenticated(),
+        currentUser: req.user,
+      });
   }
 };
 
 //display new article creation form
 exports.articleNew = (req, res, next) => {
-  res.render("blog/add-article", { article: {} });
+  res.render("blog/add-article", {
+    article: {},
+    isAuthenticated: req.isAuthenticated(),
+    currentUser: req.user,
+  });
 };
 
 exports.articleEdit = async (req, res, next) => {
   try {
     const articleId = req.params.articleId;
     const article = await getArticle(articleId);
-    res.render("blog/add-article", { article });
+    res.render("blog/add-article", {
+      article,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   } catch (e) {
     next(e);
   }
@@ -54,7 +71,14 @@ exports.articleUpdate = async (req, res, next) => {
   } catch (e) {
     const errors = Object.keys(e.erros).map((k) => e.errors[k].message);
     const article = await getArticle(articleId);
-    res.status(400).render("/blog/add-article", { errors, article });
+    res
+      .status(400)
+      .render("/blog/add-article", {
+        errors,
+        article,
+        isAuthenticated: req.isAuthenticated(),
+        currentUser: req.user,
+      });
   }
 };
 
