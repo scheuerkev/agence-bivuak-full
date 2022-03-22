@@ -21,7 +21,7 @@ block content
 								li SIRET : 794 212 506 00032 
 						.contact-card
 							p.paragraph-hit Vous avez un projet web ? Vous souhaitez être accompagné en rédaction SEO ? Pour toutes les demandes, vous pouvez utiliser le formulaire ci-dessous ! 		
-							form.contact-form(action="#")
+							form.contact-form(method="post" action="/message/new")
 								.input-container 
 									label(for="name") Votre nom : 
 									input#name_input(type="text" name="name")
@@ -32,5 +32,5 @@ block content
 									label(for="name") Votre message : 
 									textarea#name_input(type="text" name="message")
 								.btn-form-container 
-									.btn-main.btn-form Remettre à zéro 
-									.btn-main.btn-form Envoyer		
+									.btn-main.btn-form(type="reset") Remettre à zéro 
+									.btn-main.btn-form(type="submit") Envoyer		
