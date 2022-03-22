@@ -502,3 +502,9 @@
     min-width: 290px;
   }
 }
+
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 57.5%;
+  }
+}
