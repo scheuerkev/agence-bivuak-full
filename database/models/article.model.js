@@ -12,6 +12,10 @@ const articleSchema = schema({
     minlength: [1, "Contenu trop court"],
     required: [true, "Contenu requis"],
   },
+  img: {
+    type: String,
+    default: "https://fakeimg.pl/300x250/",
+  },
 });
 
 const Article = mongoose.model("article", articleSchema);

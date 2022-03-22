@@ -1,3 +1,4 @@
+const { ensureAuthenticated } = require("../config/guard.config");
 const router = require("express").Router();
 const {
   createNewArticle,
@@ -8,7 +9,7 @@ const {
   articleDelete,
 } = require("../controllers/blog.controllers");
 
-router.get("/new", articleNew);
+router.get("/new", ensureAuthenticated, articleNew);
 router.get("/", getAllArticles);
 router.get("/edit/:articleId", articleEdit);
 router.delete("/:articleId", articleDelete);
