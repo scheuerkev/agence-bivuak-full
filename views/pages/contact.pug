@@ -32,5 +32,9 @@ block content
 									textarea#name_input(type="text" name="message" required)
 									label(for="name") Votre message : 
 								.btn-form-container 
-									.btn-main.btn-form(type="reset") Remettre à zéro 
-									.btn-main.btn-form(type="submit") Envoyer		
+									button.btn-main.btn-form(type="reset") Remettre à zéro 
+									button.btn-main.btn-form(type="submit") Envoyer
+							if errors 
+								ul.my-2 
+									each error in errors
+										li.text-danger= error	

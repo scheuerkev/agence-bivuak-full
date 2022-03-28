@@ -1,14 +1,14 @@
-const { createMessage } = require("../queries/articles.queries");
+const { createMessage } = require("../queries/message.queries");
 
 exports.createNewMessage = async (req, res, next) => {
   try {
     const body = req.body;
-    await this.createNewMessage(body);
-    res.render("/contact", {
+    await createMessage(body);
+    res.render("pages/contact", {
       message: "Votre message a été envoyé avec succès",
     });
   } catch (e) {
     const errors = Object.keys(e.errors).map((k) => e.errors[k].message);
-    res.status(400).render("/contact", { errors });
+    res.render("pages/contact", { errors });
   }
 };
