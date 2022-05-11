@@ -6,7 +6,6 @@
   "scripts": {
     "start": "NODE_ENV=development nodemon bin/www",
     "start:prod": "NODE_ENV=production nodemon bin/www",
-    "sass": "sass ./sass/style.scss ./public/css/style.css --watch --style=compressed",
     "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
   },
   "repository": {

@@ -1,0 +1,374 @@
+extends ../layout.pug
+
+block content 
+    main 
+        section.page-section#services
+            .container.px-4.px-lg-5
+                h2.text-center.mt-0 Des services adaptés à tous les projets web !
+                hr.divider
+                .row.gx-4.gx-lg-5
+                    .col-lg-3.col-md-6.text-center
+                        .mt-5
+                            .mb-2
+                                i.fa-solid.fa-code.fs-1.text-primary
+                            h3.h4.mb-2 Conception de sites web
+                            p.text-muted.mb-0 Our themes are updated regularly to keep them bug free! 
+                    .col-lg-3.col-md-6.text-center
+                        .mt-5
+                            .mb-2
+                                i.fa-solid.fa-pen-fancy.fs-1.text-primary
+                            h3.h4.mb-2 Rédaction optimisée
+                            p.text-muted.mb-0 All dependencies are kept current to keep things fresh. 
+                    .col-lg-3.col-md-6.text-center
+                        .mt-5
+                            .mb-2
+                                i.fa-solid.fa-mountain-sun.fs-1.text-primary
+                            h3.h4.mb-2 Audit SEO et référencement
+                            p.text-muted.mb-0 You can use this design as is, or you can make changes! 
+                    .col-lg-3.col-md-6.text-center
+                        .mt-5
+                            .mb-2
+                                i.fa-solid.fa-compass.fs-1.text-primary
+                            h3.h4.mb-2 Guide personnel
+                            p.text-muted.mb-0 Is it really open source if it's not made with love? 
+        section.page-section.bg-light#portfolio
+            .container
+                .text-center
+                    h2.section-heading.text-uppercase Portfolio
+                    h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+                .row
+                    .col-lg-4.col-sm-6.mb-4
+                        .portfolio-item
+                            a.portfolio-link(data-bs-toggle="modal" href="#portfolioModal1")
+                                .portfolio-hover
+                                    .portfolio-hover-content
+                                        i.fas.fa-plus.fa-3x
+                                img.img-fluid(src="/img/portfolio/thumbnails/1.jpg" alt="...")
+                            .portfolio-caption
+                                .portfolio-caption-heading Threads 
+                                .portfolio-caption-subheading.text-muted Illustration 
+                    .col-lg-4.col-sm-6.mb-4
+                        .portfolio-item
+                            a.portfolio-link(data-bs-toggle="modal" href="#portfolioModal2")
+                                .portfolio-hover
+                                    .portfolio-hover-content
+                                        i.fas.fa-plus.fa-3x
+                                img.img-fluid(src="/img/portfolio/thumbnails/2.jpg" alt="...")
+                            .portfolio-caption
+                                .portfolio-caption-heading Explore 
+                                .portfolio-caption-subheading.text-muted Graphic Design 
+                    .col-lg-4.col-sm-6.mb-4
+                        .portfolio-item
+                            a.portfolio-link(data-bs-toggle="modal" href="#portfolioModal3")
+                                .portfolio-hover
+                                    .portfolio-hover-content
+                                        i.fas.fa-plus.fa-3x
+                                img.img-fluid(src="/img/portfolio/thumbnails/3.jpg" alt="...")
+                            .portfolio-caption
+                                .portfolio-caption-heading Finish 
+                                .portfolio-caption-subheading.text-muted Identity 
+                    .col-lg-4.col-sm-6.mb-4.mb-lg-0
+                        .portfolio-item
+                            a.portfolio-link(data-bs-toggle="modal" href="#portfolioModal4")
+                                .portfolio-hover
+                                    .portfolio-hover-content
+                                        i.fas.fa-plus.fa-3x
+                                img.img-fluid(src="/img/portfolio/thumbnails/4.jpg" alt="...")
+                            .portfolio-caption
+                                .portfolio-caption-heading Lines 
+                                .portfolio-caption-subheading.text-muted Branding 
+                    .col-lg-4.col-sm-6.mb-4.mb-sm-0
+                        .portfolio-item
+                            a.portfolio-link(data-bs-toggle="modal" href="#portfolioModal5")
+                                .portfolio-hover
+                                    .portfolio-hover-content
+                                        i.fas.fa-plus.fa-3x
+                                img.img-fluid(src="/img/portfolio/thumbnails/5.jpg" alt="...")
+                            .portfolio-caption
+                                .portfolio-caption-heading Southwest 
+                                .portfolio-caption-subheading.text-muted Website Design 
+                    .col-lg-4.col-sm-6
+                        .portfolio-item
+                            a.portfolio-link(data-bs-toggle="modal" href="#portfolioModal6")
+                                .portfolio-hover
+                                    .portfolio-hover-content
+                                        i.fas.fa-plus.fa-3x
+                                img.img-fluid(src="/img/portfolio/thumbnails/6.jpg" alt="...")
+                            .portfolio-caption
+                                .portfolio-caption-heading Window 
+                                .portfolio-caption-subheading.text-muted Photography 
+        section.page-section#about
+            .container
+                .text-center
+                    h2.section-heading.text-uppercase À propos
+                    h3.section-subheading.text-muted 
+                        |L’Agence Bivuak est votre
+                        |<strong>agence de création de sites web à Ganges</strong> et à
+                        |Montpellier, dans l’Hérault. Ensemble, faisons de votre histoire
+                        |digitale un succès et donnons à votre solution la visibilité
+                        |qu’elle mérite. Nous vous accompagnons pour tous vos
+                        |<strong>projets de création et de refonte de site web</strong>.
+                        |Par ailleurs, l'Agence Bivuak est aussi votre partenaire en
+                        |<strong>rédaction optimisée pour le web</strong>. Grâce à un
+                        |service de proximité et 100% personnalisé, nous réalisons des
+                        |audits et toutes les <strong>optimisations SEO</strong> pour être
+                        |en <strong>1ère page Google</strong>.
+                ul.timeline
+                    li
+                        .timeline-image
+                            img.rounded-circle.img-fluid(src="/img/about/1.jpg" alt="...")
+                        .timeline-panel
+                            .timeline-heading
+                                h4 2009-2011
+                                h4.subheading Our Humble Beginnings
+                            .timeline-body 
+                                p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                    li.timeline-inverted
+                        .timeline-image
+                            img.rounded-circle.img-fluid(src="/img/about/2.jpg" alt="...")
+                        .timeline-panel
+                            .timeline-heading
+                                h4 March 2011
+                                h4.subheading An Agency is Born
+                            .timeline-body 
+                                p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                    li
+                        .timeline-image
+                            img.rounded-circle.img-fluid(src="/img/about/3.jpg" alt="...")
+                        .timeline-panel
+                            .timeline-heading
+                                h4 December 2015
+                                h4.ubheading Transition to Full Service
+                            .timeline-body 
+                                p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                    li.timeline-inverted
+                        .timeline-image
+                            img.rounded-circle.img-fluid(src="/img/about/4.jpg" alt="...")
+                        .timeline-panel
+                            .timeline-heading
+                                h4 July 2020
+                                h4.subheading Phase Two Expansion
+                            .timeline-body 
+                                p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                    li.timeline-inverted
+                       .timeline-image
+                            h4 Be Part
+                            br
+                            | Of Our
+                            br
+                            | Story!
+        section.page-section.bg-light#team
+            .container
+                .text-center
+                    h2.section-heading.text-uppercase Our Amazing Team
+                    h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+                    .team-member
+                        img.mx-auto(src="/img/profile_pic_pines.webp" alt="...")
+                        h4 Kévin Scheuer
+                        p.text-muted Développeur web & rédacteur SEO
+                        a.btn.btn-dark.btn-social.mx-2(href="#!" aria-label="Kévin Scheuer Twitter Profile")
+                            i.fab.fa-twitter
+                        a.btn.btn-dark.btn-social.mx-2(href="#!" aria-label="Kévin Scheuer Facebook Profile")
+                            i.fab.fa-github
+                        a.btn.btn-dark.btn-social.mx-2(href="#!" aria-label="Kévin Scheuer LinkedIn Profile")
+                            i.fab.fa-linkedin-in
+                        a.btn.btn-dark.btn-social.mx-2(href="#!" aria-label="Kévin Scheuer Twitter Profile")
+                            i.fab.fa-facebook-f
+                        a.btn.btn-dark.btn-social.mx-2(href="#!" aria-label="Kévin Scheuer Twitter Profile")
+                            i.fab.fa-instagram
+                .row
+                    .col-lg-8.mx-auto.text-center
+                        p.large.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
+        section.page-section#contact
+            .container
+                .text-center
+                    h2.section-heading.text-uppercase Contact Us
+                    h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+                form#contactForm
+                    .row.align-items-stretch.mb-5
+                        .col-md-6
+                            .form-group
+                                input.form-control#name(type="text" placeholder="Your Name *")
+                                .invalid-feedback A name is required.
+                            .form-group
+                                input.form-control#email(type="email" placeholder="Your Email *")
+                                .invalid-feedback An email is required.
+                                .invalid-feedback Email is not valid.
+                            .form-group.mb-md-0
+                                input.form-control#phone(type="tel" placeholder="Your Phone *")
+                                .invalid-feedback A phone number is required.
+                        .col-md-6
+                            .form-group.form-group-textarea.mb-md-0
+                                textarea.form-control#message(placeholder="Your Message *")
+                                .invalid-feedback A message is required.
+                    .d-none#submitSuccessMessage
+                        .text-center.text-white.mb-3
+                            .fw-bolder Form submission successful!
+                            | To activate this form, sign up at
+                            br 
+                            a(href="https://startbootstrap.com/solution/contact-forms") https://startbootstrap.com/solution/contact-forms
+                    .d-none#submitErrorMessage
+                        .text-center text-danger mb-3 Error sending message!
+                    .text-center
+                        button.btn.btn-primary.btn-xl.text-uppercase.disabled#submitButton(type="submit") Send Message
+        .portfolio-modal.modal.fade#portfolioModal1(tabindex="-1" role="dialog" aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    .close-modal(data-bs-dismiss="modal")
+                        img(src="/img/close-icon.svg" alt="Close modal")
+                    .container
+                        .row.justify-content-center
+                            .col-lg-8
+                                .modal-body
+                                    h2.text-uppercase Project Name
+                                    p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                                    img.img-fluid.d-block.mx-auto(src="/img/portfolio/fullsize/1.jpg" alt="...")
+                                    p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    ul.list-inline
+                                        li
+                                            strong Client:
+                                            | Threads
+                                        li
+                                            strong Category:
+                                            | Illustration                                    
+                                    button.btn.btn-primary.btn-xl.text-uppercase(data-bs-dismiss="modal" type="button")
+                                        i.fas.fa-xmark.me-1
+                                    | Close Project
+        .portfolio-modal.modal.fade#portfolioModal1(tabindex="-1" role="dialog" aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    .close-modal(data-bs-dismiss="modal")
+                        img(src="/img/close-icon.svg" alt="Close modal")
+                    .container
+                        .row.justify-content-center
+                            .col-lg-8
+                                .modal-body
+                                    h2.text-uppercase Project Name
+                                    p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                                    img.img-fluid.d-block.mx-auto(src="/img/portfolio/fullsize/1.jpg" alt="...")
+                                    p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    ul.list-inline
+                                        li
+                                            strong Client:
+                                            | Threads
+                                        li
+                                            strong Category:
+                                            | Illustration                                    
+                                    button.btn.btn-primary.btn-xl.text-uppercase(data-bs-dismiss="modal" type="button")
+                                        i.fas.fa-xmark.me-1
+                                    | Close Project
+        .portfolio-modal.modal.fade#portfolioModal2(tabindex="-1" role="dialog" aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    .close-modal(data-bs-dismiss="modal")
+                        img(src="/img/close-icon.svg" alt="Close modal")
+                    .container
+                        .row.justify-content-center
+                            .col-lg-8
+                                .modal-body
+                                    h2.text-uppercase Project Name
+                                    p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                                    img.img-fluid.d-block.mx-auto(src="/img/portfolio/fullsize/1.jpg" alt="...")
+                                    p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    ul.list-inline
+                                        li
+                                            strong Client:
+                                            | Threads
+                                        li
+                                            strong Category:
+                                            | Illustration                                    
+                                    button.btn.btn-primary.btn-xl.text-uppercase(data-bs-dismiss="modal" type="button")
+                                        i.fas.fa-xmark.me-1
+                                    | Close Project
+        .portfolio-modal.modal.fade#portfolioModal3(tabindex="-1" role="dialog" aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    .close-modal(data-bs-dismiss="modal")
+                        img(src="/img/close-icon.svg" alt="Close modal")
+                    .container
+                        .row.justify-content-center
+                            .col-lg-8
+                                .modal-body
+                                    h2.text-uppercase Project Name
+                                    p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                                    img.img-fluid.d-block.mx-auto(src="/img/portfolio/fullsize/1.jpg" alt="...")
+                                    p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    ul.list-inline
+                                        li
+                                            strong Client:
+                                            | Threads
+                                        li
+                                            strong Category:
+                                            | Illustration                                    
+                                    button.btn.btn-primary.btn-xl.text-uppercase(data-bs-dismiss="modal" type="button")
+                                        i.fas.fa-xmark.me-1
+                                    | Close Project
+        .portfolio-modal.modal.fade#portfolioModal4(tabindex="-1" role="dialog" aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    .close-modal(data-bs-dismiss="modal")
+                        img(src="/img/close-icon.svg" alt="Close modal")
+                    .container
+                        .row.justify-content-center
+                            .col-lg-8
+                                .modal-body
+                                    h2.text-uppercase Project Name
+                                    p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                                    img.img-fluid.d-block.mx-auto(src="/img/portfolio/fullsize/1.jpg" alt="...")
+                                    p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    ul.list-inline
+                                        li
+                                            strong Client:
+                                            | Threads
+                                        li
+                                            strong Category:
+                                            | Illustration                                    
+                                    button.btn.btn-primary.btn-xl.text-uppercase(data-bs-dismiss="modal" type="button")
+                                        i.fas.fa-xmark.me-1
+                                    | Close Project
+        .portfolio-modal.modal.fade#portfolioModal5(tabindex="-1" role="dialog" aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    .close-modal(data-bs-dismiss="modal")
+                        img(src="/img/close-icon.svg" alt="Close modal")
+                    .container
+                        .row.justify-content-center
+                            .col-lg-8
+                                .modal-body
+                                    h2.text-uppercase Project Name
+                                    p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                                    img.img-fluid.d-block.mx-auto(src="/img/portfolio/fullsize/1.jpg" alt="...")
+                                    p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    ul.list-inline
+                                        li
+                                            strong Client:
+                                            | Threads
+                                        li
+                                            strong Category:
+                                            | Illustration                                    
+                                    button.btn.btn-primary.btn-xl.text-uppercase(data-bs-dismiss="modal" type="button")
+                                        i.fas.fa-xmark.me-1
+                                    | Close Project
+        .portfolio-modal.modal.fade#portfolioModal6(tabindex="-1" role="dialog" aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    .close-modal(data-bs-dismiss="modal")
+                        img(src="/img/close-icon.svg" alt="Close modal")
+                    .container
+                        .row.justify-content-center
+                            .col-lg-8
+                                .modal-body
+                                    h2.text-uppercase Project Name
+                                    p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+                                    img.img-fluid.d-block.mx-auto(src="/img/portfolio/fullsize/1.jpg" alt="...")
+                                    p Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    ul.list-inline
+                                        li
+                                            strong Client:
+                                            | Threads
+                                        li
+                                            strong Category:
+                                            | Illustration                                    
+                                    button.btn.btn-primary.btn-xl.text-uppercase(data-bs-dismiss="modal" type="button")
+                                        i.fas.fa-xmark.me-1
+                                    | Close Project
