@@ -6,6 +6,8 @@
     --ab-body-color: hsl(340, 23%, 98%);
     --ab-black: #212529;
     --ab-navbar-color: hsl(0, 0%, 99%);
+    --ab-salmon-pink: hsl(0, 40%, 65%);
+    --ab-grey: hsl(0, 0%, 46%);
     --ab-navbar-boxshadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
 
 }
@@ -295,7 +297,7 @@ header.master-head .master-head--heading {
   width: 2px;
   margin-left: -1.5px;
   content: "";
-  background-color: #e9ecef;
+  background-color: var(--ab-salmon-pink);
 }
 .timeline > li {
   position: relative;
@@ -337,7 +339,7 @@ header.master-head .master-head--heading {
   margin-left: 0;
   text-align: center;
   color: white;
-  border: 7px solid #e9ecef;
+  border: 7px solid var(--ab-salmon-pink);;
   border-radius: 100%;
   background-color: #016b6e;
 }
@@ -520,4 +522,8 @@ section#contact form#contactForm :-ms-input-placeholder {
 .footer {
   text-align: center;
   font-size: 0.9rem;
+}
+
+.underfooter {
+  background-color: black;
 }
