@@ -6,13 +6,64 @@
     --ab-body-color: hsl(340, 23%, 98%);
     --ab-black: #212529;
     --ab-navbar-color: hsl(0, 0%, 99%);
-    --ab-salmon-pink: hsl(0, 40%, 65%);
-    --ab-grey: hsl(0, 0%, 46%);
+    --ab-salmon-pink: #B65454;
+    --ab-grey: hsl(0, 0%, 45%);
     --ab-navbar-boxshadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
 
 }
+
+html {
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  font-family: var(--ab-font-family-body);
+  background-color: var(--ab-body-color);
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: var(--ab-font-family-headings);
+}
+
+p {
+  line-height: 1.75;
+}
+
 img {
     max-width: 100%;
+}
+
+a {
+  color: var(--ab-salmon-pink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.portfolio-link::after {
+  display: block;
+  content: '';
+  border-bottom: 2px solid var(--ab-salmon-pink);
+  transform: scaleX(0);
+  transform-origin: 0% 50%;
+  transition: all 250ms ease-in-out;
+}
+
+textarea {
+min-height: 19.5rem !important;
+height: initial !important;
+}
+
+a:hover {
+  color: var(--ab-salmon-pink);
+  text-transform: underline;
+}
+
+.portfolio-link:hover::after {
+  color: var(--ab-salmon-pink);
+  transform: scaleX(1);
 }
 
 .h-100-vh{
@@ -34,24 +85,14 @@ img {
   color: var(--ab-green) !important;
 }
 
-html {
-  scroll-padding-top: 4.5rem;
+.text-muted {
+  color: var(--ab-grey) !important;
 }
 
-body {
-  position: relative;
-  overflow-x: hidden;
-  font-family: var(--ab-font-family-body);
-  background-color: var(--ab-body-color);
+.bg-light {
+  background-color: #fff !important;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-    font-family: var(--ab-font-family-headings);
-}
-
-p {
-  line-height: 1.75;
-}
 
 .divider {
   width: 30%;
@@ -203,6 +244,7 @@ header.master-head .master-head--heading {
     font-weight: 700;
   }
 }
+
 #portfolio .portfolio-item {
   max-width: 26rem;
   margin-left: auto;
@@ -339,7 +381,7 @@ header.master-head .master-head--heading {
   margin-left: 0;
   text-align: center;
   color: white;
-  border: 7px solid var(--ab-salmon-pink);;
+  border: 5px solid var(--ab-salmon-pink);;
   border-radius: 100%;
   background-color: #016b6e;
 }
@@ -526,4 +568,12 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 .underfooter {
   background-color: black;
+  line-height: initial;
+  padding: 0.5rem 0;
+}
+
+@media screen and (max-width:991px) {
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    visibility: hidden;
+  }
 }
