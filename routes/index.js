@@ -5,7 +5,7 @@ const message = require("./messages.route");
 router.use("/blog", blog);
 router.use("/message", message);
 
-router.get("/", (req, res) => {
+router.get("*", (req, res) => {
   res.render("pages/index");
 });
 

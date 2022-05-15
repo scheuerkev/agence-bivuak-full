@@ -4,7 +4,7 @@ section.page-section#contact
                     h2.text-light Contactez l'Agence Bivuak
                     hr.divider.my-3
                     h3.section-subheading.text-light Vous êtes à un clic de donner vie à votre projet digital.
-                form.needs-validation#contactForm(novalidate method="post" action="/message/new")
+                form.needs-validation#contactForm(novalidate)
                     .row.align-items-stretch.mb-5
                         .col-md-6
                             .form-group
@@ -35,7 +35,7 @@ section.page-section#contact
                     .d-none#submitErrorMessage
                         .text-center.text-danger.mb-3 Une erreur est survenue pendant l'envoi du message!
                     .text-center
-                        button.btn.btn-primary.btn-xl.text-uppercase#submitButton(type="submit") Envoyer le message
+                        button.btn.btn-primary.btn-xl.text-uppercase#submitButton Envoyer le message
                     if errors 
                         ul.my-2 
                             each error in errors

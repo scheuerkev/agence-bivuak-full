@@ -8,6 +8,7 @@ require("./database");
 require("./bin/www");
 
 const app = express();
+
 module.exports = app;
 
 app.set("views", path.join(__dirname, "views"));
