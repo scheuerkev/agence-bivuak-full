@@ -11,6 +11,7 @@
   --ab-salmon-pink: #b65454;
   --ab-grey: hsl(0, 0%, 45%);
   --ab-navbar-boxshadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  --ab-basic-smooth : all 270ms ease-in;
 }
 
 html {
@@ -536,7 +537,7 @@ header.master-head .master-head--heading {
 
 section#contact {
   background-color: #212529;
-  background-image: url("/img/contact.jpg");
+  background-image: url("/img/contact.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -602,4 +603,45 @@ section#contact form#contactForm :-ms-input-placeholder {
   .carousel-control-next-icon {
     align-self: flex-start;
   }
+}
+
+@media screen and (min-width: 481px ) {
+  #callBtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 481px ) {
+  #contactBtn {
+    display: none;
+  }
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--ab-green);
+  background-color: transparent;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+
+ .accordion-button:focus, .btn-primary:focus  {
+  border: rgb(1, 107, 110);
+  box-shadow: 0 0 0 .25rem rgba(1,107,110,.15);
+  outline: 0 !important;
+}
+
+.btn-primary:focus {
+  border: #fff;
+  background-color: var(--ab-green);
+}
+
+a.btn-social {
+  background-color: #016b6e;
+  border: none;
+  transition: var(--ab-basic-smooth);
+}
+
+a.btn-social:hover {
+  cursor: pointer;
+  background-color: var(--ab-salmon-pink);
+  box-shadow: var(--ab-navbar-boxshadow);
 }

@@ -23,6 +23,16 @@ exports.validateMessage = [
     .isEmpty()
     .withMessage("L'email ne peut pas être vide")
     .bail(),
+  check("phone")
+    .trim()
+    .escape()
+    .not()
+    .isAlpha()
+    .withMessage("Erreur dans le numéro de téléphone")
+    .not()
+    .isEmpty()
+    .withMessage("Le téléphone ne peut pas être vide")
+    .bail(),
   check("message")
     .trim()
     .escape()
@@ -39,7 +49,7 @@ exports.validateMessage = [
       const errorsArray = e.array();
       const errors = Object.keys(errorsArray).map((k) => errorsArray[k].msg);
 
-      return res.render("pages/contact", { errors });
+      return res.render("pages/index", { errors });
     }
     next();
   },

@@ -3,35 +3,40 @@ section.page-section#contact
                 .text-center
                     h2.text-light Contactez l'Agence Bivuak
                     hr.divider.my-3
-                    p.section-subheading.text-light Vous êtes à un clic de donner vie à votre projet digital.
-                form#contactForm
+                    h3.section-subheading.text-light Vous êtes à un clic de donner vie à votre projet digital.
+                form.needs-validation#contactForm(novalidate method="post" action="/message/new")
                     .row.align-items-stretch.mb-5
                         .col-md-6
                             .form-group
                                 label.form-label.text-light(for="name") Votre nom :
-                                input.form-control#name(type="text")
+                                input.form-control#name(type="text" name="name" required)
+                                .valid-feedback Ok !
                                 .invalid-feedback Un nom valide est requis.
                             .form-group
                                 label.form-label.text-light(for="email") Votre email :
-                                input.form-control#email(type="email")
+                                input.form-control#email(type="email" name="email" required)
+                                .valid-feedback Ok !
                                 .invalid-feedback Un email valide est requis.
                                 .invalid-feedback L'email indiqué n'est pas valide.
                             .form-group.mb-md-0
                                 label.form-label.text-light(for="phone") Votre téléphone :
-                                input.form-control#phone(type="tel")
+                                input.form-control#phone(type="tel" name="phone" required)
+                                .valid-feedback Ok !
                                 .invalid-feedback Un téléphone valide est requis.
                         .col-md-6
                             .form-group.form-group-textarea.mb-md-0
                                 label.form-label.text-light(for="message") Votre message :
-                                textarea.form-control#message
+                                textarea.form-control#message(name="message" required)
+                                .valid-feedback Ok !
                                 .invalid-feedback Un message est requis.
                     .d-none#submitSuccessMessage
                         .text-center.text-white.mb-3
                             .fw-bolder Merci pour votre message ! Nous revenons vers vous très rapidement 😃
-                            | To activate this form, sign up at
-                            br 
-                            a(href="https://startbootstrap.com/solution/contact-forms") https://startbootstrap.com/solution/contact-forms
                     .d-none#submitErrorMessage
                         .text-center.text-danger.mb-3 Une erreur est survenue pendant l'envoi du message!
                     .text-center
                         button.btn.btn-primary.btn-xl.text-uppercase#submitButton(type="submit") Envoyer le message
+                    if errors 
+                        ul.my-2 
+                            each error in errors
+                                li.text-danger= error
