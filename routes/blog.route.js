@@ -1,4 +1,5 @@
 const router = require("express").Router();
+
 const {
   createNewArticle,
   getAllArticles,
@@ -9,7 +10,9 @@ const {
 } = require("../controllers/blog");
 
 router.get("/new", articleNew);
-router.get("/", getAllArticles);
+router.get("/", (req, res) => {
+  res.render('blog/index');
+});
 router.get("/edit/:articleId", articleEdit);
 router.delete("/:articleId", articleDelete);
 router.post("/update/:articleId", articleUpdate);

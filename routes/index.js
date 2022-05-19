@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const blog = require("./blog");
+const blog = require("./blog.route");
 const message = require("./messages.route");
 
 router.use("/blog", blog);
