@@ -1,0 +1,39 @@
+extends ../page-layout.pug
+
+block content 
+    main#mentions-legales
+        .container        
+            .row.my-5
+                .col-sm-4
+                    .list-group#mentions-tabList(role="tablist")
+                        a.list-group-item.list-group-item-action.active#list-identity-list(data-toggle="list" href="#list-identity" role="tab" aria-controls="identity") Identité
+                        a.list-group-item.list-group-item-action#list-hosting-list(data-toggle="list" href="#list-hosting" role="tab" aria-controls="hosting") Hébergement
+                        a.list-group-item.list-group-item-action#list-terms-of-sales-list(data-toggle="list" href="#list-terms-of-sales" role="tab" aria-controls="terms-of-sales") Conditions générales de vente (CGV)
+                        a.list-group-item.list-group-item-action#list-datas-list(data-toggle="list" href="#list-datas" role="tab" aria-controls="datas") Traitement des données
+                .col-sm-8
+                    .tab-content#nav-tabContent
+                        .tab-pane.fade.show.active#list-identity(role="tabpanel" aria-labelledby="list-identity-list") 
+                            h3 Coordonnées de l'entreprise
+                            p Agence Bivuak création de site internet à Ganges dans l'Hérault (34)
+                            p <i class="fa-solid fa-envelope"></i> 23, rue Biron, 34190 Ganges 
+                            p SIRET : 794 212 506 00032 | APE : 6021.Z | TVA intracom. FR49794212506
+                            p Dispensée d'enregistrement RCS & RM | TVA non applicable, article 293 B du Code général des impôts
+                            p Gérant : M. Kévin Scheuer
+                        .tab-pane.fade#list-hosting(role="tabpanel" aria-labelledby="list-hosting-list") 
+                            h3 Coordonnées de l'hébergeur 
+                            p OVH SAS filiale de OVH Groupe SA
+                            p <i class="fa-solid fa-envelope"></i> 2, rue Kellermann, 59100 Roubaix 
+                            p SIRET : 424 761 419 00045 | APE : 2620.Z | TVA intracom. FR22424761419
+                            p RCS Lille Métropole
+                        .tab-pane.fade#list-terms-of-sales(role="tabpanel" aria-labelledby="list-terms-of-sales-list") 
+                            h3 Télécharger les CGV 
+                            a(href="/downladable/ConditionsGeneralesdeVente.pdf" download="Conditions Générales de Vente.pdf") Retrouvez les CGV en vigueur ici
+                        .tab-pane.fade#list-datas(role="tabpanel" aria-labelledby="list-datas-list") 
+                            h3 Dispositions de confidentialité
+                            p À travers le formulaire de contact de son site web, l'Agence Bivuak est amené à collecter des données personnelles et à les sauvegarder en base de données. La suppression de données concernant un visiteur peut-être demandée par 
+                                a(href="mailto:agence.bivuak@gmail.com") simple email  
+                                | ou par écrit à : Agence Bivuak, agence de création de sites web, 23 rue Biron, 34190 Ganges. Par ailleurs, L'Agence Bivuak s'engage à ne pas céder ces informations à des tiers, ni à les communiquer, d'une aucune manière que ce soit.
+                            p agence-bivuak.fr collecte et analyse des cookies de tracage du comportement des utilisateurs sur son domaine, dits cookies analytiques.
+                    
+                
+                
