@@ -261,6 +261,35 @@ header.master-head .master-head--heading {
   }
 }
 
+header.page-head {
+  padding-top: 15rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("/img/page-header.webp");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
+#mentions-legales {
+  min-height: 50vh;
+}
+
+.list-group-item.active {
+  background-color: var(--ab-green);
+  border: transparent;
+}
+
+@media screen and (max-width: 575px) {
+  .tab-content {
+    margin-top: 2rem;
+    text-align: center;
+  }
+}
+
+
 #portfolio .portfolio-item {
   max-width: 26rem;
   margin-left: auto;
@@ -595,6 +624,16 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 0.9rem;
 }
 
+@media screen and (max-width: 991px) {
+  .footer-socials {
+    order: 1;
+  }
+
+  .footer-admin {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
 .underfooter {
   background-color: rgb(20, 20, 20);
   line-height: initial;
