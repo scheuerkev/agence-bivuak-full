@@ -1,0 +1,15 @@
+extends ../blog-layout.pug
+
+block content 
+    main
+        section.page-section#blog
+            .container.px-4.px-lg-5
+                if post
+                    .text-center
+                        h2.mt-0= post.title
+                        hr.divider.my-2
+                    .row.gx-4.gx-lg-5.justify-content-center
+                        .col-sm-8 
+                            .content=post.content
+                    .d-flex.justify-content-end.mb-4
+                        a.btn.btn-primary.text-uppercase(href="/blog") Retour au blog →

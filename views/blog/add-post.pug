@@ -1,17 +1,17 @@
-//extends ../layout.pug 
+extends ../blog-layout.pug 
 
 block content 
     main
         section.add-article 
-            .page-container 
+            .container 
                 .d-flex.flex-row.content.mx-auto
                     .flex-fill
                         form.card(method="post" action="#")
                             .card-header Écrire un article 
                             .card-body 
                                 .form-group
-                                    textarea.form-control(name="title" placeholder="Le titre ici")= article.title
-                                    //= article.title 
+                                    input.form-control(name="title" placeholder="Le titre ici") 
+                                    //-= article.title 
                                     textarea.form-control(name="content" placeholder="Le contenu ici")= article.content
                                     //= article.content
                                 if errors 

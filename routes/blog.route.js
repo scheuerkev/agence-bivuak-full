@@ -1,21 +1,21 @@
 const router = require("express").Router();
 
 const {
-  createNewArticle,
-  getAllArticles,
-  articleNew,
-  articleEdit,
-  articleUpdate,
-  articleDelete,
-} = require("../controllers/blog");
+  postsList,
+  postById,
+  createNewPost,
+  newPost,
+  postUpdate,
+  postEdit,
+  postDelete,
+} = require("../controllers/post.controller");
 
-router.get("/new", articleNew);
-router.get("/", (req, res) => {
-  res.render('blog/index');
-});
-router.get("/edit/:articleId", articleEdit);
-router.delete("/:articleId", articleDelete);
-router.post("/update/:articleId", articleUpdate);
-router.post("/", createNewArticle);
+router.get("/new", newPost); //protect this route
+router.get("/", postsList);
+router.get("/edit/:postId", postEdit);
+router.get("/:slug", postById);
+router.delete("/:postId", postDelete);
+router.post("/update/:articleId", postUpdate);
+router.post("/", createNewPost);
 
 module.exports = router;
