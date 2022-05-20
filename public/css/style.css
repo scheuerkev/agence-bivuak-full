@@ -11,7 +11,7 @@
   --ab-salmon-pink: #b65454;
   --ab-grey: hsl(0, 0%, 45%);
   --ab-navbar-boxshadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  --ab-basic-smooth : all 270ms ease-in;
+  --ab-basic-smooth: all 270ms ease-in;
 }
 
 html {
@@ -261,7 +261,8 @@ header.master-head .master-head--heading {
   }
 }
 
-header.page-head {
+header.page-head,
+header.blog-head {
   padding-top: 15rem;
   padding-bottom: 6rem;
   text-align: center;
@@ -288,7 +289,6 @@ header.page-head {
     text-align: center;
   }
 }
-
 
 #portfolio .portfolio-item {
   max-width: 26rem;
@@ -648,23 +648,23 @@ section#contact form#contactForm :-ms-input-placeholder {
   }
 }
 
-@media screen and (min-width: 481px ) {
+@media screen and (min-width: 481px) {
   #callBtn {
     display: none;
   }
 }
 
-@media screen and (max-width: 481px ) {
+@media screen and (max-width: 481px) {
   #contactBtn {
     display: none;
   }
 }
 
-.accordion-item h5  {
+.accordion-item h5 {
   font-size: 0.9rem;
 }
 
-.accordion-item p  {
+.accordion-item p {
   font-size: 0.9rem;
 }
 
@@ -675,16 +675,18 @@ section#contact form#contactForm :-ms-input-placeholder {
 .accordion-button:not(.collapsed) {
   color: var(--ab-green);
   background-color: transparent;
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
 }
 
- .accordion-button:focus, .btn-primary:focus  {
+.accordion-button:focus,
+.btn-primary:focus {
   border: rgb(1, 107, 110);
-  box-shadow: 0 0 0 .25rem rgba(1,107,110,.15);
+  box-shadow: 0 0 0 0.25rem rgba(1, 107, 110, 0.15);
   outline: 0 !important;
 }
 
-.accordion-item, .accordion-header {
+.accordion-item,
+.accordion-header {
   background-color: transparent !important;
 }
 
