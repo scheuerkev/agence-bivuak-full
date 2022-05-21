@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const blog = require("./blog.route");
 const message = require("./messages.route");
+const users = require("./users.route");
+const auth = require("./auth.route");
 
 router.use("/blog", blog);
 router.use("/message", message);

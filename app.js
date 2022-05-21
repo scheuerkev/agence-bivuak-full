@@ -8,11 +8,13 @@ require("./database");
 require("./bin/www");
 
 const app = express();
-
 module.exports = app;
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
+
+require('./config/session.config');
+require('./config/passport.config');
 
 //app.use(helmet());
 app.use(morgan("short"));

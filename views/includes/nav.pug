@@ -14,3 +14,9 @@ nav.navbar.navbar-expand-lg.fixed-top.py-3#mainNav
                     a.nav-link(href="/#about") L'Agence Bivuak 
                 li.nav-item
                     a.nav-link(href="/#contact") Contact
+                if isAuthenticated 
+                    li.nav-item
+                        a.nav-link(href="/profil") Profil
+                    li.nav-item
+                        a.nav-link(href="/auth/signout") Se déconnecter
+

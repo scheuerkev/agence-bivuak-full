@@ -1,6 +1,20 @@
-extends ../home-layout.pug
+extends ../layout.pug
 
-block content 
+block content
+    header.master-head
+        .container.px-4.px-lg-5.h-100-vh
+            .row.gx-4.gx-5-lg.h-100-vh.align-items-center.justify-content-between.text-center.flex-column
+                .col-lg-5.col-md-6.col-8
+                    img.logo(src="/img/ab-logos/logo_agence_bivuak.webp" alt="Logo de l'Agence Bivuak, agence de création web dans l'Hérault")  
+                .col-lg-8 
+                    h2.master-head--subheading.text-uppercase.font-weight-bold.text-dark Ne restez pas seul.
+                    hr.divider.my-1.my-xs-3
+                    h1.master-head--heading.text-dark Laissez-vous guider dans le web 
+                .col-lg-5 
+                    a.btn.btn-primary.btn-xl.text-uppercase#callBtn(href="tel:+33614222713") 
+                        i.fa-solid.fa-phone.me-2 
+                        |  Appel direct
+                    a.btn.btn-primary.btn-xl.text-uppercase#contactBtn(href="#contact") Contactez-nous
     main 
         include ../includes/homepage/services.pug
         include ../includes/homepage/portfolio_grid.pug
