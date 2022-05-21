@@ -4,19 +4,24 @@ block content
     main
         section.add-article 
             .container 
-                .d-flex.flex-row.content.mx-auto
-                    .flex-fill
-                        form.card(method="post" action="#")
-                            .card-header Écrire un article 
-                            .card-body 
-                                .form-group
-                                    input.form-control(name="title" placeholder="Le titre ici") 
-                                    //-= article.title 
-                                    textarea.form-control(name="content" placeholder="Le contenu ici")= article.content
-                                    //= article.content
-                                if errors 
-                                    ul.my-2 
-                                        each error in errors
-                                            li.text-danger= error    
-                                .w-100 
-                                    input.btn.btn-primary.ms-auto.d-block(type="submit" value="Poster")
+                .row.justify-content-center
+                    .col-sm-10
+                        form(method="post" action="/blog/")
+                            .mb-3
+                                label.form-label(for="title") Titre de l'article
+                                input.form-control#title(required name="title" aria-describedby="titleHelp")
+                                .form-text#titleHelp Le titre de l'article sera mis en forme pour servir dans l'URL du post
+                            .mb-3    
+                                label(for="content") Extrait
+                                input.form-control#content(name="content" aria-describedby="contentHelp")
+                                .form-text#contentHelp Un court extrait de l'article qui sera servi sur la page avec la liste de tous les articles
+                            .mb-3    
+                                label(for="markdown") Markdown
+                                textarea.form-control#markdown(name="markdown" aria-describedby="markdownHelp")
+                                .form-text#markdownHelp Le contenu de l'article en markdown
+                            if errors 
+                                ul.my-2 
+                                    each error in errors
+                                        li.text-danger= error    
+                            .w-100 
+                                input.btn.btn-primary.ms-auto.d-block(type="submit" value="Poster")

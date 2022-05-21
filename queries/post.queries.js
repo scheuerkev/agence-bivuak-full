@@ -1,7 +1,7 @@
 const Post = require("../database/models/post.model");
 
 exports.getAllPosts = () => {
-  return Post.find({}).exec();
+  return Post.find({}).sort({ createdAt: "desc" }).exec();
 };
 
 exports.getOnePost = (slug) => {
@@ -10,6 +10,7 @@ exports.getOnePost = (slug) => {
 
 exports.createPost = (post) => {
   const newPost = new Post(post);
+  console.log("in query");
   return newPost.save();
 };
 

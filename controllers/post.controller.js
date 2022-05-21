@@ -33,9 +33,11 @@ exports.createNewPost = async (req, res, next) => {
     const body = req.body;
     await createPost(body);
     res.redirect("/blog");
+    console.log("in try controller");
   } catch (e) {
-    const errors = Object.keys(e.errors).map((k) => e.errors[k].message);
-    res.status(400).render("blog/add-article", { errors });
+    //const errors = Object.keys(e.errors).map((k) => e.errors[k].message);
+    console.log(e);
+    res.status(400).render("blog/add-post");
   }
 };
 

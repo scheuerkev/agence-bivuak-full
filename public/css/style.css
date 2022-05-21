@@ -133,7 +133,7 @@ a:hover {
 
 @media (min-width: 768px) {
   section {
-    padding: 9rem 0;
+    padding: 4rem 0;
   }
 }
 .btn-xl {
@@ -711,9 +711,10 @@ a.btn-social:hover {
 .post-preview > a {
   color: #212529;
 }
-.post-preview > a:focus, .post-preview > a:hover {
+.post-preview > a:focus,
+.post-preview > a:hover {
   text-decoration: none;
-  color: #0085A1;
+  color: #0085a1;
 }
 .post-preview > a > .post-title {
   font-size: 1.875rem;
