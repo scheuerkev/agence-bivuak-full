@@ -4,6 +4,8 @@ const message = require("./messages.route");
 
 router.use("/blog", blog);
 router.use("/message", message);
+router.use("/users", users);
+router.use("/auth", auth);
 
 router.get("/mentions-legales", (req, res) => {
   res.render("pages/mentions-legales");
