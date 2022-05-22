@@ -5,3 +5,14 @@ exports.ensureAuthenticated = (req, res, next) => {
     res.redirect("/auth/signin/form");
   }
 };
+
+exports.isAdmin = (req, res, next) => {
+  req.user.role === 1
+    ? next()
+    : res
+        .status(403)
+        .json({
+          message:
+            "Vous n'avez pas les droits requis pour effectuer cette action ❌",
+        });
+};

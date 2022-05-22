@@ -5,13 +5,19 @@ const {
   getOnePost,
   deletePost,
   updatePost,
+  getPostsWithAuthor,
+  getOnePostWithAuthor,
 } = require("../queries/post.queries");
 
 //getAllPosts controller find and return the whole list of articles in db
 exports.postsList = async (req, res, next) => {
   try {
-    const posts = await getAllPosts();
-    res.render("blog/index", { posts });
+    const posts = await getPostsWithAuthor();
+    res.render("blog/index", {
+      posts,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   } catch (e) {
     next(e);
   }
@@ -20,8 +26,12 @@ exports.postsList = async (req, res, next) => {
 exports.postById = async (req, res, next) => {
   try {
     const slug = req.params.slug;
-    const post = await getOnePost(slug);
-    res.render("blog/post", { post });
+    const post = await getOnePostWithAuthor(slug);
+    res.render("blog/post", {
+      post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   } catch (e) {
     next(e);
   }
@@ -31,26 +41,36 @@ exports.postById = async (req, res, next) => {
 exports.createNewPost = async (req, res, next) => {
   try {
     const body = req.body;
-    await createPost(body);
+    await createPost({ ...body, author: req.user._id });
     res.redirect("/blog");
-    console.log("in try controller");
   } catch (e) {
-    //const errors = Object.keys(e.errors).map((k) => e.errors[k].message);
-    console.log(e);
-    res.status(400).render("blog/add-post");
+    const errors = Object.keys(e.errors).map((k) => e.errors[k].message);
+    res.status(400).render("blog/add-post", {
+      errors,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   }
 };
 
 //display new article creation form
 exports.newPost = (req, res, next) => {
-  res.render("blog/add-post", { article: {} });
+  res.render("blog/add-post", {
+    article: {},
+    isAuthenticated: req.isAuthenticated(),
+    currentUser: req.user,
+  });
 };
 
 exports.postEdit = async (req, res, next) => {
   try {
     const postId = req.params.postId;
     const post = await getOnePost(postId);
-    res.render("blog/add-article", { post });
+    res.render("blog/add-post", {
+      post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   } catch (e) {
     next(e);
   }
@@ -65,7 +85,12 @@ exports.postUpdate = async (req, res, next) => {
   } catch (e) {
     const errors = Object.keys(e.erros).map((k) => e.errors[k].message);
     const post = await getOnePost(postId);
-    res.status(400).render("/blog/add-article", { errors, post });
+    res.status(400).render("/blog/add-article", {
+      errors,
+      post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   }
 };
 
@@ -74,7 +99,11 @@ exports.postDelete = async (req, res, next) => {
     const postId = req.params.postId;
     await deletePost(postId);
     const posts = await getAllPosts();
-    res.render("blog/blog", { posts });
+    res.render("blog/blog", {
+      posts,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   } catch (e) {
     next(e);
   }

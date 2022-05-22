@@ -20,16 +20,19 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-passport.use("local",
+passport.use(
+  "local",
   new LocalStrategy(
     {
       usernameField: "email",
     },
     async (email, password, done) => {
       try {
-        const user = findUserPerEmail(email);
+        console.log(email, password);
+        const user = await findUserPerEmail(email);
+        console.log("User in try before if", user);
         if (user) {
-          console.log(user);
+          console.log("User in if", user);
           const match = await user.comparePassword(password);
           if (match) {
             done(null, user);
@@ -37,12 +40,10 @@ passport.use("local",
             done(null, false, { message: "Wrong password" });
           }
         } else {
-          done(null, false, {
-            message: "Unable to find a user with this email",
-          });
+          done(null, false, { message: "User not found" });
         }
-      } catch (error) {
-        done(error);
+      } catch (e) {
+        done(e);
       }
     }
   )

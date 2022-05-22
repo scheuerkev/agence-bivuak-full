@@ -28,7 +28,10 @@ block content
                                                     a.text-uppercase(href=`/blog/${post.slug}`) Lire la suite →
                                             .col-md-4 
                                                 img.img-fluid.img-preview(src=`/img/blog/${post.img}` alt="...") 
-                                        p.post-meta Publié par Start Bootstrap le !{post.createdAt.toLocaleDateString()}
+                                        p.post-meta Publié par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
                                     hr.article-divider.my-4
                                     .d-flex.justify-content-end.mb-4.d-none 
                                         a.btn.btn-primary.text-uppercase(href="#!") Anciens articles →
+    include ../includes/footer.pug
+    include ../includes/scripts.pug
+    script(src="/js/blog-mainpage.js")

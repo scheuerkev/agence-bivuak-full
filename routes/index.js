@@ -10,11 +10,17 @@ router.use("/users", users);
 router.use("/auth", auth);
 
 router.get("/mentions-legales", (req, res) => {
-  res.render("pages/mentions-legales");
+  res.render("pages/mentions-legales", {
+    isAuthenticated: req.isAuthenticated(),
+    currentUser: req.user,
+  });
 });
 
 router.get("*", (req, res) => {
-  res.render("pages/index");
+  res.render("pages/index", {
+    isAuthenticated: req.isAuthenticated(),
+    currentUser: req.user,
+  });
 });
 
 module.exports = router;

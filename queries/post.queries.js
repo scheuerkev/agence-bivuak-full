@@ -4,8 +4,8 @@ exports.getAllPosts = () => {
   return Post.find({}).sort({ createdAt: "desc" }).exec();
 };
 
-exports.getOnePost = (slug) => {
-  return Post.findOne({ slug: slug }).exec();
+exports.getOnePostWithAuthor = (slug) => {
+  return Post.findOne({ slug: slug }).populate("author").exec();
 };
 
 exports.createPost = (post) => {
@@ -24,4 +24,8 @@ exports.updatePost = (postId, post) => {
     { $set: post },
     { runValidators: true }
   );
+};
+
+exports.getPostsWithAuthor = () => {
+  return Post.find({}).populate("author").sort({ createdAt: "desc" }).exec();
 };

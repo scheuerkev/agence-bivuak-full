@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { ensureAuthenticated, isAdmin } = require("../config/guards.config");
 
 const {
   postsList,
@@ -10,12 +11,14 @@ const {
   postDelete,
 } = require("../controllers/post.controller");
 
-router.get("/new", newPost); //protect this route
 router.get("/", postsList);
-router.get("/edit/:postId", postEdit);
+
+router.get("/new", ensureAuthenticated, newPost);
+router.post("/", ensureAuthenticated, isAdmin, createNewPost);
 router.get("/:slug", postById);
+
 router.delete("/:postId", postDelete);
-router.post("/update/:articleId", postUpdate);
-router.post("/", createNewPost);
+router.post("/update/:postId", postUpdate);
+router.get("/edit/:postId", postEdit);
 
 module.exports = router;

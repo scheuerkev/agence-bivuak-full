@@ -19,5 +19,10 @@ block content
                     .col-sm-8.mt-5 
                         .content
                             | !{post.sanitizedHtml}
+                        hr.divider
+                        p Rédigé par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
                         .d-flex.mb-4
                             a.btn.btn-primary.text-uppercase.mt-5(href="/blog") Retour au blog →
+    include ../includes/footer.pug
+    include ../includes/scripts.pug
+    script(src="/js/blog-post.js")

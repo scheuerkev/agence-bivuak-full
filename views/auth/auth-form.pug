@@ -54,6 +54,10 @@ block content
                                 <button class="btn btn-facebook btn-login text-uppercase" type="submit"><i class="fab fa-facebook-f me-2"></i> S'identifier avec Facebook</button>
                             </div>
                             </form>
+                            if errors
+                                ul.my-2
+                                    each error in errors
+                                        li.text-danger= error
                             p.text-center.mt-3 Pas encore de compte ? Créez en un 
                                 a(href="/users/signup/form") ici
                         </div>
@@ -61,4 +65,8 @@ block content
             </div>
         </div>
     </div>
+    include ../includes/footer.pug
+    include ../includes/scripts.pug
+    script(src="/js/auth-form.js")
+	
         

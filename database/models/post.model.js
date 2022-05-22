@@ -43,7 +43,7 @@ const postSchema = schema({
   author: {
     type: schema.Types.ObjectId,
     ref: "user",
-    required: false,
+    required: true,
   },
 });
 
