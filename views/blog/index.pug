@@ -16,7 +16,7 @@ block content
                         hr.divider.my-2
                         h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas eaque dolore explicabo!
                     .row.gx-4.gx-lg-5.justify-content-center
-                        .col-md-10.col-lg-8.col-xl-7
+                        .col-md-10.col-lg-8.col-xl-7#posts-container
                             if posts
                                 each post in posts 
                                     .post-preview
@@ -29,6 +29,10 @@ block content
                                             .col-md-4 
                                                 img.img-fluid.img-preview(src=`/img/blog/${post.img}` alt="...") 
                                         p.post-meta Publié par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
+                                        if editable && post.author._id.toString() === currentUser._id.toString()
+                                            .d-flex.flex-row.justify-content-center
+                                                a(class="fas fa-edit pe-2 text-info" href="/blog/edit/"+ post._id)
+                                                i(class="fas fa-minus-circle text-danger pointer-cursor" postid=post._id)
                                     hr.article-divider.my-4
                                     .d-flex.justify-content-end.mb-4.d-none 
                                         a.btn.btn-primary.text-uppercase(href="#!") Anciens articles →

@@ -4,6 +4,10 @@ exports.getAllPosts = () => {
   return Post.find({}).sort({ createdAt: "desc" }).exec();
 };
 
+exports.getOnePost = (postId) => {
+  return Post.findById(postId).exec();
+}
+
 exports.getOnePostWithAuthor = (slug) => {
   return Post.findOne({ slug: slug }).populate("author").exec();
 };

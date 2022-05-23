@@ -33,6 +33,7 @@ exports.postsList = async (req, res, next) => {
       posts,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
+      editable: true,
     });
   } catch (e) {
     next(e);
@@ -72,7 +73,7 @@ exports.createNewPost = async (req, res, next) => {
 //display new article creation form
 exports.newPost = (req, res, next) => {
   res.render("blog/add-post", {
-    article: {},
+    post: {},
     isAuthenticated: req.isAuthenticated(),
     currentUser: req.user,
   });
@@ -110,17 +111,29 @@ exports.postUpdate = async (req, res, next) => {
   }
 };
 
-exports.updateHeroImage = (req, res, next) => {};
+exports.updateHeroImage = [
+  upload.single('img'), async(req, res, next) => {
+    try{
+      const post = req.post;
+      post.img = `/img/blog/${req.file.filename}`;
+      await post.save();
+      res.redirect('/');
+    } catch (e) {
+      next(e);
+    }
+  }
+];
 
 exports.postDelete = async (req, res, next) => {
   try {
     const postId = req.params.postId;
     await deletePost(postId);
-    const posts = await getAllPosts();
-    res.render("blog/blog", {
+    const posts = await getPostsWithAuthor();
+    res.render("blog/index", {
       posts,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
+      editable: true,
     });
   } catch (e) {
     next(e);
