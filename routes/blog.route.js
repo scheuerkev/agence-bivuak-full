@@ -7,6 +7,7 @@ const {
   createNewPost,
   newPost,
   postUpdate,
+  updateHeroImage,
   postEdit,
   postDelete,
 } = require("../controllers/post.controller");
@@ -19,6 +20,7 @@ router.get("/:slug", postById);
 
 router.delete("/:postId", postDelete);
 router.post("/update/:postId", postUpdate);
+router.post("/update/img", ensureAuthenticated, isAdmin, updateHeroImage);
 router.get("/edit/:postId", postEdit);
 
 module.exports = router;

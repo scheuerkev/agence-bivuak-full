@@ -13,7 +13,7 @@ block content
             .container 
                 .row.justify-content-center
                     .col-sm-10
-                        form(method="post" action="/blog/")
+                        form#post-content(method="post" action="/blog/")
                             .mb-3
                                 label.form-label(for="title") Titre de l'article
                                 input.form-control#title(required name="title" aria-describedby="titleHelp")
@@ -26,6 +26,13 @@ block content
                                 label(for="markdown") Markdown
                                 textarea.form-control#markdown(name="markdown" aria-describedby="markdownHelp")
                                 .form-text#markdownHelp Le contenu de l'article en markdown
+                        form#image-content(action="/users/update/image" method="post" enctype="multipart/form-data")
+                            .mb-3
+                                    label.form-label(for="hero-image") Image à la une
+                                    input.form-control#hero-image(name="img" aria-describedby="heroImgHelp")
+                                    .form-text#heroImgHelp L'image à la une de l'article
+                            input(type="file" name="avatar" class="d-none" id="input-profile")
+                            img(src='' class="img-fluid" id="img-profile")
                             if errors 
                                 ul.my-2 
                                     each error in errors

@@ -32,6 +32,8 @@ block content
                                     hr.article-divider.my-4
                                     .d-flex.justify-content-end.mb-4.d-none 
                                         a.btn.btn-primary.text-uppercase(href="#!") Anciens articles →
+                                    if currentUser.role === 1
+                                        a(href=("blog/new")) Écrire un nouvel article
     include ../includes/footer.pug
     include ../includes/scripts.pug
     script(src="/js/blog-mainpage.js")

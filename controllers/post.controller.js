@@ -1,4 +1,8 @@
 const Post = require("../database/models/post.model");
+const multer = require("multer");
+const path = require("path");
+const moment = require("moment");
+
 const {
   getAllPosts,
   createPost,
@@ -8,6 +12,18 @@ const {
   getPostsWithAuthor,
   getOnePostWithAuthor,
 } = require("../queries/post.queries");
+
+//multer config
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: (req, res, cb) => {
+      cb(null, path.join(__dirname, "../public/img/blog"));
+    },
+    filename: (req, res, cb) => {
+      cb(null, `${Date.now()}-${file.originalName}`);
+    },
+  }),
+});
 
 //getAllPosts controller find and return the whole list of articles in db
 exports.postsList = async (req, res, next) => {
@@ -93,6 +109,8 @@ exports.postUpdate = async (req, res, next) => {
     });
   }
 };
+
+exports.updateHeroImage = (req, res, next) => {};
 
 exports.postDelete = async (req, res, next) => {
   try {

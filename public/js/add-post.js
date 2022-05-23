@@ -43,4 +43,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
     };
     handleSubmit();
   });
+
+  const imgInput = document.querySelector("#hero-img");
+  const imageContent = document.querySelector("#image-content");
+
+  if (imageContent && imgInput) {
+    imageContent.addEventListener("click", () => {
+      imgInput.click();
+    });
+    imgInput.addEventListener("change", () => {
+      imageContent.submit();
+    });
+  }
 });
