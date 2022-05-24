@@ -112,24 +112,18 @@ exports.postUpdate = async (req, res, next) => {
 };
 
 exports.updateHeroImage = [
-<<<<<<< HEAD
   upload.single('img'), async(req, res, next) => {
     try{
       const postId = req.params.postId;
+      console.log(postId);
       const post = await getOnePost(postId);
-=======
-  upload.single("img"),
-  async (req, res, next) => {
-    try {
-      const post = req.post;
->>>>>>> f3bf7a3f2e42a586ba373c01ab12055f3d8bf9d1
-      post.img = `/img/blog/${req.file.filename}`;
+       post.img = `${req.file.filename}`;
       await post.save();
-      res.redirect("/");
+      res.redirect('/blog');
     } catch (e) {
       next(e);
     }
-  },
+  }
 ];
 
 exports.postDelete = async (req, res, next) => {
