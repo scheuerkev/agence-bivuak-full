@@ -759,6 +759,9 @@ a.btn-social:hover {
   opacity: 0.75;
 }
 
+.dropdown-toggle::after {
+  vertical-align: 0;
+}
 
 /*Auth form*/
 
