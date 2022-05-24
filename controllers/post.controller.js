@@ -19,8 +19,8 @@ const upload = multer({
     destination: (req, res, cb) => {
       cb(null, path.join(__dirname, "../public/img/blog"));
     },
-    filename: (req, res, cb) => {
-      cb(null, `${Date.now()}-${file.originalName}`);
+    filename: (req, file, cb) => {
+      cb(null, `${Date.now()}-${file.originalname}`);
     },
   }),
 });
@@ -112,16 +112,17 @@ exports.postUpdate = async (req, res, next) => {
 };
 
 exports.updateHeroImage = [
-  upload.single('img'), async(req, res, next) => {
-    try{
+  upload.single("img"),
+  async (req, res, next) => {
+    try {
       const post = req.post;
       post.img = `/img/blog/${req.file.filename}`;
       await post.save();
-      res.redirect('/');
+      res.redirect("/");
     } catch (e) {
       next(e);
     }
-  }
+  },
 ];
 
 exports.postDelete = async (req, res, next) => {
