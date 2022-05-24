@@ -26,17 +26,18 @@ block content
                                 label(for="markdown") Markdown
                                 textarea.form-control#markdown(name="markdown" aria-describedby="markdownHelp")= post.markdown
                                 .form-text#markdownHelp Le contenu de l'article en markdown
-                        form#image-content(action="/users/update/image" method="post" enctype="multipart/form-data")
+                            .w-100 
+                                input.btn.btn-primary.ms-auto.d-block#createPost(value="Poster")
+                        form#image-content(action="/blog/update/img" method="post" enctype="multipart/form-data")
                             .mb-3
                                     label.form-label(for="hero-image") Image à la une
-                                    input.form-control#hero-image(name="img" aria-describedby="heroImgHelp" value= post.img)
+                                    input.form-control#hero-image(type="file" name="img" aria-describedby="heroImgHelp")
                                     .form-text#heroImgHelp L'image à la une de l'article
+                                    img(src=`${post.img}` class="img-fluid")
                             if errors 
                                 ul.my-2 
                                     each error in errors
                                         li.text-danger= error    
-                            .w-100 
-                                input.btn.btn-primary.ms-auto.d-block#createPost(value="Poster")
     include ../includes/footer.pug
     include ../includes/scripts.pug
     script(src="/js/add-post.js")
