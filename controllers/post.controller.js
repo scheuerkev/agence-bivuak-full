@@ -114,7 +114,8 @@ exports.postUpdate = async (req, res, next) => {
 exports.updateHeroImage = [
   upload.single('img'), async(req, res, next) => {
     try{
-      const post = req.post;
+      const postId = req.params.postId;
+      const post = await getOnePost(postId);
       post.img = `/img/blog/${req.file.filename}`;
       await post.save();
       res.redirect('/');

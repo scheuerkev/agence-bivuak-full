@@ -20,7 +20,7 @@ router.get("/:slug", postById);
 
 router.delete("/:postId", postDelete);
 router.post("/update/img", ensureAuthenticated, isAdmin, updateHeroImage);
-router.get("/edit/:postId", postEdit);
+router.put("/edit/:postId", postEdit);
 router.post("/update/:postId", postUpdate);
 
 module.exports = router;
