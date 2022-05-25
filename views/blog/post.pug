@@ -15,14 +15,14 @@ block content
                     h2.mt-0.text-center= post.title
                     hr.divider.my-2
                 .row.gx-4.gx-lg-5.justify-content-center
-                    img.img-fluid.mx-auto(src=`/img/blog/${post.img}`)
                     .col-sm-8.mt-5 
-                        .content
-                            | !{post.sanitizedHtml}
-                        hr.divider
-                        p Rédigé par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
-                        .d-flex.mb-4
-                            a.btn.btn-primary.text-uppercase.mt-5(href="/blog") Retour au blog →
+                    img.img-fluid.mx-auto(src=`/img/blog/${post.img}` alt="La photo à la une de l'article")
+                    .content.mt-5
+                        | !{post.sanitizedHtml}
+                    hr.divider
+                    p Rédigé par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
+                    .d-flex.mb-4
+                        a.btn.btn-primary.text-uppercase.mt-5(href="/blog") Retour au blog →
     include ../includes/footer.pug
     include ../includes/scripts.pug
     script(src="/js/blog-post.js")

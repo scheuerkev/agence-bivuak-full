@@ -29,10 +29,11 @@ const upload = multer({
 exports.postsList = async (req, res, next) => {
   try {
     const posts = await getPostsWithAuthor();
+    req.user ? (currentUser = req.user) : (currentUser = null);
     res.render("blog/index", {
       posts,
       isAuthenticated: req.isAuthenticated(),
-      currentUser: req.user,
+      currentUser,
       editable: true,
     });
   } catch (e) {
@@ -43,11 +44,13 @@ exports.postsList = async (req, res, next) => {
 exports.postById = async (req, res, next) => {
   try {
     const slug = req.params.slug;
+    req.user ? (currentUser = req.user) : (currentUser = {});
+
     const post = await getOnePostWithAuthor(slug);
     res.render("blog/post", {
       post,
       isAuthenticated: req.isAuthenticated(),
-      currentUser: req.user,
+      currentUser,
     });
   } catch (e) {
     next(e);
@@ -112,18 +115,19 @@ exports.postUpdate = async (req, res, next) => {
 };
 
 exports.updateHeroImage = [
-  upload.single('img'), async(req, res, next) => {
-    try{
+  upload.single("img"),
+  async (req, res, next) => {
+    try {
       const postId = req.params.postId;
       console.log(postId);
       const post = await getOnePost(postId);
-       post.img = `${req.file.filename}`;
+      post.img = `${req.file.filename}`;
       await post.save();
-      res.redirect('/blog');
+      res.redirect("/blog");
     } catch (e) {
       next(e);
     }
-  }
+  },
 ];
 
 exports.postDelete = async (req, res, next) => {

@@ -29,15 +29,16 @@ block content
                                             .col-md-4 
                                                 img.img-fluid.img-preview(src=`/img/blog/${post.img}` alt="...") 
                                         p.post-meta Publié par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
-                                        if editable && post.author._id.toString() === currentUser._id.toString()
-                                            .d-flex.flex-row.justify-content-center
-                                                a(class="fas fa-edit pe-2 text-info" href="/blog/edit/"+ post._id)
-                                                i(class="fas fa-minus-circle text-danger pointer-cursor" postid=post._id)
-                                    hr.article-divider.my-4
-                                    .d-flex.justify-content-end.mb-4.d-none 
-                                        a.btn.btn-primary.text-uppercase(href="#!") Anciens articles →
-                                    if currentUser.role === 1
-                                        a(href=("blog/new")) Écrire un nouvel article
+                                        if currentUser
+                                            if editable && post.author._id.toString() === currentUser._id.toString()
+                                                .d-flex.flex-row.justify-content-center
+                                                    a(class="fas fa-edit pe-2 text-info" href="/blog/edit/"+ post._id)
+                                                    i(class="fas fa-minus-circle text-danger pointer-cursor" postid=post._id)
+                                            hr.article-divider.my-4
+                                            .d-flex.justify-content-end.mb-4.d-none 
+                                                a.btn.btn-primary.text-uppercase(href="#!") Anciens articles →
+                                            if currentUser.role === 1
+                                                a(href=("blog/new")) Écrire un nouvel article
     include ../includes/footer.pug
     include ../includes/scripts.pug
     script(src="/js/blog-mainpage.js")
