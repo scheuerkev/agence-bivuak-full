@@ -15,13 +15,15 @@ block content
                     .card.border-0.shadow.my-5
                         .card-body.p-4.p-sm-5
                             h3.card-title.text-center.mb-5.fw-light.fs-5 S'identifier sur l'Agence Bivuak
-                            form
+                            form(novalidate)
                             .form-floating.mb-3
-                                input.form-control#floatingInput(type="email" name="email" placeholder="name@example.com")
+                                input.needs-validation.form-control#floatingInput(required type="email" name="email" placeholder="name@example.com")
                                 label(for="floatingInput") Adresse email
+                                .valid-feedback Ok!
                             .form-floating.mb-3
-                                input.form-control#password(type="password" name="password" placeholder="Mot de passe")
+                                input.needs-validation.form-control#password(required type="password" name="password" placeholder="Mot de passe")
                                 label(for="password") Mot de passe
+                                .valid-feedback Ok!
                             //- .form-check.mb-3
                             //-     input.form-check-input#rememberPasswordCheck(type="checkbox" value="")
                             //-     label.form-check-label(for="rememberPasswordCheck") Se souvenir de moi

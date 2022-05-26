@@ -5,17 +5,14 @@ exports.signin = (req, res, next) => {
     if (err) {
       next(err);
     } else if (!user) {
-      res.render("auth/auth-form", {
-        errors: [info.message],
-        isAuthenticated: req.isAuthenticated(),
-        currentUser: req.user,
-      });
+      console.log(res);
+      res.status(403).send({ errors: info.message });
     } else {
       req.login(user, (err) => {
         if (err) {
           next(err);
         } else {
-          res.redirect("/");
+          res.send(req.user);
         }
       });
     }

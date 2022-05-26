@@ -765,4 +765,10 @@ a.btn-social:hover {
 
 /*Auth form*/
 
+.invalid {
 
+    border-color: red;
+    box-shadow: 0 0 0 0.15rem rgb(255 0 0 / 60%);
+    background: url(../img/plus-solid.svg) no-repeat right;
+
+}

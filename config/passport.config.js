@@ -28,19 +28,17 @@ passport.use(
     },
     async (email, password, done) => {
       try {
-        console.log(email, password);
         const user = await findUserPerEmail(email);
-        console.log("User in try before if", user);
+        console.log(user);
         if (user) {
-          console.log("User in if", user);
           const match = await user.comparePassword(password);
           if (match) {
             done(null, user);
           } else {
-            done(null, false, { message: "Wrong password" });
+            done(null, false, { message: "Mot de passe invalide" });
           }
         } else {
-          done(null, false, { message: "User not found" });
+          done(null, false, { message: "Cet utilisateur n'existe pas" });
         }
       } catch (e) {
         done(e);
