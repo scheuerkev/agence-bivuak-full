@@ -56,7 +56,7 @@ const handleSubmit = async () => {
       title: "Yipeeee 🥳",
       text: `Content de vous revoir ${response.data.username}`,
       showConfirmButton: false,
-      timer: 3000,
+      timer: 2000,
     }).then((result) => {
       if (result) {
         window.location.assign("/blog");

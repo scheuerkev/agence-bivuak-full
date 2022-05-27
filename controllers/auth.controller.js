@@ -19,6 +19,13 @@ exports.signin = (req, res, next) => {
   })(req, res, next);
 };
 
+exports.signinWithGoogle = (req, res, next) => {
+  passport.authenticate("google", {
+    scope:
+      "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile",
+  })(req, res, next);
+};
+
 exports.signinForm = (req, res, next) => {
   res.render("auth/auth-form", {
     errors: null,

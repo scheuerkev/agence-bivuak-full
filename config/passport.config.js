@@ -1,8 +1,15 @@
+require("dotenv").config();
 const app = require("../app");
 const passport = require("passport");
 const User = require("../database/models/user.model");
-const { findUserPerEmail } = require("../queries/user.queries");
+const {
+  findUserPerEmail,
+  findUserPerGoogleId,
+} = require("../queries/user.queries");
 const LocalStrategy = require("passport-local").Strategy;
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
+
+const util = require("util");
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -41,6 +48,42 @@ passport.use(
           done(null, false, { message: "Cet utilisateur n'existe pas" });
         }
       } catch (e) {
+        done(e);
+      }
+    }
+  )
+);
+
+passport.use(
+  "google",
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: "/blog",
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      try {
+        // console.log(
+        //   util.inspect(profile, { compact: true, depth: 5, breakLength: 80 })
+        // );
+        console.log("Here!");
+        const user = await findUserPerGoogleId(profile.id);
+        if (user) {
+          done(null, user);
+        } else {
+          const newUser = new User({
+            username: profile.displayName,
+            local: {
+              googleId: profile.id,
+              email: profile.emails[0].value,
+            },
+          });
+          const savedUser = await newUser.save();
+          done(null, savedUser);
+        }
+      } catch (e) {
+        console.log(e);
         done(e);
       }
     }

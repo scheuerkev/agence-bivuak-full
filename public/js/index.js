@@ -44,7 +44,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   if (logoutLink) {
     logoutLink.addEventListener("click", ($e) => {
       $e.preventDefault();
-      handleLogout();
+      confirmChoice();
     });
   }
 });
@@ -56,7 +56,6 @@ const handleLogout = async () => {
       url: "/auth/signout",
     });
     if (response) {
-      console.log("clicked");
       Swal.fire({
         position: "top-end",
         icon: "success",
@@ -80,4 +79,24 @@ const handleLogout = async () => {
       timer: 2000,
     });
   }
+};
+
+const confirmChoice = () => {
+  Swal.fire({
+    position: "top-end",
+    title: "Voulez-vous vous déconnecter ?",
+    showDenyButton: true,
+    confirmButtonText: "Oui",
+    denyButtonText: "Non",
+    customClass: {
+      actions: "my-actions",
+      cancelButton: "order-1 right-gap",
+      confirmButton: "order-2",
+      denyButton: "order-3",
+    },
+  }).then((result) => {
+    if (result.isConfirmed) {
+      handleLogout();
+    }
+  });
 };

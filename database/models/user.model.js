@@ -6,6 +6,7 @@ const userSchema = schema({
   local: {
     email: { type: String, require: true, unique: true },
     password: { type: String, required: true },
+    googleId: { type: String },
   },
   username: { type: String, required: true, unique: true },
   avatar: { type: String, default: "/avatars/default.webp" },

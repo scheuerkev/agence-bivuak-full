@@ -31,11 +31,11 @@ block content
                                 button.btn.btn-primary.btn-login.text-uppercase#sendAuthBtn
                                     i.fa-solid.fa-key.me-2
                                     | S'identifier
-                            //- hr.my-4
-                            //- .d-grid.mb-2
-                            //-     button.btn.btn-google.btn-login.text-uppercase
-                            //-         i.fab.fa-google.me-2
-                            //-         | S'identifier avec Google
+                            hr.my-4
+                            .d-grid.mb-2
+                                a.btn.btn-google.btn-login.text-uppercase(href='/auth/google')
+                                    i.fab.fa-google.me-2
+                                    | S'identifier avec Google
                             //- .d-grid
                             //-     button.btn.btn-facebook.btn-login.text-uppercase(type="submit")
                             //-         i.fab.fa-facebook-f.me-2
@@ -44,8 +44,8 @@ block content
                                 ul.my-2
                                     each error in errors
                                         li.text-danger= error
-                            //- p.text-center.mt-3 Pas encore de compte ? Créez en un 
-                            //-     a ici
+                            p.text-center.mt-3 Pas encore de compte ? Créez en un 
+                                a(href="/users/signup/form") ici
     include ../includes/footer.pug
     include ../includes/scripts.pug
     script(src="/js/auth-form.js")
