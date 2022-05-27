@@ -20,15 +20,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   // Shrink the navbar when page is scrolled
   document.addEventListener("scroll", navbarShrink);
 
-  // Activate Bootstrap scrollspy on the main nav element
-  // const mainNav = document.body.querySelector("#mainNav");
-  // if (mainNav) {
-  //   new bootstrap.ScrollSpy(document.body, {
-  //     target: "#mainNav",
-  //     offset: 74,
-  //   });
-  // }
-
+  //jQuery function to tab content on privacy page
   $("#mentions-tabList a").on("click", function (e) {
     e.preventDefault();
     $(this).tab("show");
@@ -46,4 +38,46 @@ window.addEventListener("DOMContentLoaded", (event) => {
       }
     });
   });
+
+  //add logout asynchronous query if link exists
+  const logoutLink = document.querySelector(".logout-link");
+  if (logoutLink) {
+    logoutLink.addEventListener("click", ($e) => {
+      $e.preventDefault();
+      handleLogout();
+    });
+  }
 });
+
+const handleLogout = async () => {
+  try {
+    const response = await axios({
+      method: "get",
+      url: "/auth/signout",
+    });
+    if (response) {
+      console.log("clicked");
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Au revoir 👋",
+        text: `${response.data.message}`,
+        showConfirmButton: false,
+        timer: 2000,
+      }).then((result) => {
+        if (result) {
+          window.location.assign("/");
+        }
+      });
+    }
+  } catch (error) {
+    Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: "Il y'a un probleme 😰",
+      text: `${error.response.data.errors}`,
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  }
+};

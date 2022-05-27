@@ -28,7 +28,7 @@ exports.signinForm = (req, res, next) => {
 };
 
 exports.signout = (req, res, next) => {
-  req.session.destroy((err) => {
-    res.redirect("/");
+  req.session.destroy(() => {
+    res.status(200).send({ message: "Déconnexion réussie" });
   });
 };

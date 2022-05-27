@@ -7,13 +7,13 @@ nav.navbar.navbar-expand-lg.fixed-top.py-3#mainNav
         .collapse.navbar-collapse#navbarResponsive
             ul.navbar-nav.ms-auto.my-2.my-lg-0
                 li.nav-item
-                    a.nav-link(href="/#services") Services
+                    a.nav-link(href="/#services" data-target="#services") Services
                 li.nav-item
-                    a.nav-link(href="/#portfolio") Portfolio
+                    a.nav-link(href="/#portfolio" data-target="#portfolio") Portfolio
                 li.nav-item
-                    a.nav-link(href="/#about") L'Agence Bivuak 
+                    a.nav-link(href="/#about" data-target="#about") L'Agence Bivuak 
                 li.nav-item
-                    a.nav-link(href="/#contact") Contact
+                    a.nav-link(href="/#contact" data-target="#contact") Contact
                 if isAuthenticated
                     li.nav-item.dropdown
                         a.nav-link.dropdown-toggle#navbarDropdown(role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Mon espace
@@ -23,7 +23,7 @@ nav.navbar.navbar-expand-lg.fixed-top.py-3#mainNav
                             a.dropdown-item(href="/blog") Blog
                             a.dropdown-item(href="/profile") Profil
                             .dropdown-divider
-                            a.dropdown-item(href="/auth/signout") Déconnexion
+                            button.dropdown-item.logout-link Déconnexion
                     //- li.nav-item
                     //-     a.nav-link(href="/profil") Profil
                     //- li.nav-item
