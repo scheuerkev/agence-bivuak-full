@@ -26,6 +26,13 @@ exports.signinWithGoogle = (req, res, next) => {
   })(req, res, next);
 };
 
+exports.googleAuthCb = (req, res, next) => {
+  passport.authenticate("google", {
+    successRedirect: "/blog",
+    failureRedirect: "/",
+  })(req, res, next);
+};
+
 exports.signinForm = (req, res, next) => {
   res.render("auth/auth-form", {
     errors: null,

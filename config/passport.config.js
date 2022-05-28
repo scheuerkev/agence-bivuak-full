@@ -60,27 +60,32 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "/blog",
+      callbackURL: "/auth/google/cb",
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        // console.log(
-        //   util.inspect(profile, { compact: true, depth: 5, breakLength: 80 })
-        // );
-        console.log("Here!");
-        const user = await findUserPerGoogleId(profile.id);
-        if (user) {
-          done(null, user);
+        console.log(
+          util.inspect(profile, { compact: true, depth: 5, breakLength: 80 })
+        );
+        const localUser = await findUserPerEmail(profile.emails[0].value);
+        const googleUser = await findUserPerGoogleId(profile.id);
+        if (localUser) {
+          done(null, localUser);
         } else {
-          const newUser = new User({
-            username: profile.displayName,
-            local: {
-              googleId: profile.id,
-              email: profile.emails[0].value,
-            },
-          });
-          const savedUser = await newUser.save();
-          done(null, savedUser);
+          if (googleUser) {
+            done(null, googleUser);
+          } else {
+            const newUser = new User({
+              username: profile.displayName,
+              local: {
+                googleId: profile.id,
+                email: profile.emails[0].value,
+              },
+              avatar: profile.photos[0].value,
+            });
+            const savedUser = await newUser.save();
+            done(null, savedUser);
+          }
         }
       } catch (e) {
         console.log(e);

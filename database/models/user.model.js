@@ -5,7 +5,7 @@ const schema = mongoose.Schema;
 const userSchema = schema({
   local: {
     email: { type: String, require: true, unique: true },
-    password: { type: String, required: true },
+    password: { type: String },
     googleId: { type: String },
   },
   username: { type: String, required: true, unique: true },
