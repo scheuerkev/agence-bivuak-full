@@ -84,13 +84,15 @@ const handleLogout = async () => {
 const confirmChoice = () => {
   Swal.fire({
     position: "top-end",
-    title: "Voulez-vous vous déconnecter ?",
+    icon: "warning",
+    title: "Attention !",
+    text: "Voulez-vous vraiment vous déconnecter ?",
     showDenyButton: true,
     confirmButtonText: "Oui",
+    confirmButtonColor: "#016b6e",
     denyButtonText: "Non",
     customClass: {
       actions: "my-actions",
-      cancelButton: "order-1 right-gap",
       confirmButton: "order-2",
       denyButton: "order-3",
     },

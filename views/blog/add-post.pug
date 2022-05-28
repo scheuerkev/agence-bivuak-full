@@ -33,7 +33,7 @@ block content
                                     label.form-label(for="hero-image") Image à la une
                                     input.form-control#hero-image(type="file" name="img" aria-describedby="heroImgHelp")
                                     .form-text#heroImgHelp L'image à la une de l'article
-                                    img(src=`/img/blog/${post.img}` class="img-fluid")
+                                    img(src=`${post.img}` class="img-fluid")
                             if errors 
                                 ul.my-2 
                                     each error in errors

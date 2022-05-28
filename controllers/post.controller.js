@@ -46,12 +46,12 @@ exports.postById = async (req, res, next) => {
   try {
     const slug = req.params.slug;
     req.user ? (currentUser = req.user) : (currentUser = {});
-
     const post = await getOnePostWithAuthor(slug);
     res.render("blog/post", {
       post,
       isAuthenticated: req.isAuthenticated(),
       currentUser,
+      editable: true,
     });
   } catch (e) {
     next(e);
@@ -101,7 +101,7 @@ exports.postUpdate = async (req, res, next) => {
   const postId = req.params.postId;
   try {
     const body = req.body;
-    await updatePost(postId, body);
+    await updatePost(postId, { ...body, updatedAt: Date.now() });
     res.redirect("/blog");
   } catch (e) {
     const errors = Object.keys(e.erros).map((k) => e.errors[k].message);

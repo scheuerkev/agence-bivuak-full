@@ -14,12 +14,17 @@ const {
 
 router.get("/", postsList);
 
-router.get("/new", ensureAuthenticated, newPost);
+router.get("/new", ensureAuthenticated, isAdmin, newPost);
 router.post("/", ensureAuthenticated, isAdmin, createNewPost);
 router.get("/:slug", postById);
 
 router.delete("/:postId", postDelete);
-router.post("/update/img/:postId", ensureAuthenticated, isAdmin, updateHeroImage);
+router.post(
+  "/update/img/:postId",
+  ensureAuthenticated,
+  isAdmin,
+  updateHeroImage
+);
 router.get("/edit/:postId", postEdit);
 router.post("/update/:postId", postUpdate);
 

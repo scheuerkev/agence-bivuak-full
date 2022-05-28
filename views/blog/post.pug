@@ -15,14 +15,25 @@ block content
                     h2.mt-0.text-center= post.title
                     hr.divider.my-2
                 .row.gx-4.gx-lg-5.justify-content-center
-                    .col-sm-8.mt-5 
+                    .col-sm-8.mt-5
+                    
                     img.img-fluid.mx-auto(src=`${post.img}` alt="La photo à la une de l'article")
                     .content.mt-5
                         | !{post.sanitizedHtml}
-                    hr.divider
-                    p Rédigé par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
-                    .d-flex.mb-4
-                        a.btn.btn-primary.text-uppercase.mt-5(href="/blog") Retour au blog →
+                    p.fst-italic.mt-5 Rédigé par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
+                    if post.updatedAt
+                        p Modifié le !{post.updatedAt.toLocaleDateString()}
+                .row.mt-5
+                    .col-sm-8
+                        a.btn.btn-primary.text-uppercase(href="/blog") Retour au blog →
+                    if currentUser
+                        if editable && (post.author._id.toString() === currentUser._id.toString())
+                            .col-sm-2
+                                a.btn.btn-info.px-2(href="/blog/edit/"+ post._id) Editer 
+                                    i.fas.fa-edit
+                            .col-sm-2
+                                a.btn.btn-danger.px-2#btnDelete(postId=post._id) Supprimer 
+                                    i.fas.fa-minus-circle
     include ../includes/footer.pug
     include ../includes/scripts.pug
     script(src="/js/blog-post.js")

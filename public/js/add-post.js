@@ -97,7 +97,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
   imageContent.addEventListener("click", () => {
     imageInput.click();
   });
-  imageInput.addEventListener("change", () => {
+  imageInput.addEventListener("change", ($e) => {
     imageContent.submit();
+    $e.stopPropagation();
   });
 });

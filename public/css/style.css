@@ -708,6 +708,10 @@ a.btn-social:hover {
 }
 
 /*Blog*/
+section#blog {
+  padding: 2rem 0;
+}
+
 .post-preview > a {
   color: #212529;
 }
@@ -716,18 +720,13 @@ a.btn-social:hover {
   text-decoration: none;
   color: #0085a1;
 }
-.post-preview > a > .post-title {
-  font-size: 1.875rem;
-  margin-top: 1.875rem;
-  margin-bottom: 0.625rem;
-}
+
 .post-preview > a > .post-subtitle {
   font-weight: 300;
   margin-bottom: 0.625rem;
 }
 .post-preview > .post-meta {
-  margin-top: 0;
-  color: var(--ab-grey);
+  font-size: 0.8rem;
 }
 .post-preview > .post-meta > a {
   text-decoration: none;
@@ -751,6 +750,10 @@ a.btn-social:hover {
     display: block;
     margin: auto;
   }
+}
+
+#blog .section-subheading {
+  margin-bottom: 2.5rem;
 }
 
 .article-divider {

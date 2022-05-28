@@ -5,16 +5,14 @@ block content
         .container.px-4.px-lg-5
             .row.gx-4.gx-5-lg.align-items-center.justify-content-between.text-center.flex-column
                 .col-lg-8 
-                    h2.master-head--subheading.text-uppercase.font-weight-bold.text-dark Agence Bivuak
-                    hr.divider.my-1.my-xs-3
-                    h1.master-head--heading.text-dark Blog 
+                    h1.master-head--heading.text-dark Le blog de l'Agence Bivuak 
     main
         section.page-section#blog
-            .container.px-4.px-lg-5
+            .container
                     .text-center
                         h2.mt-0 Les derniers articles du blog !
                         hr.divider.my-2
-                        h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas eaque dolore explicabo!
+                        h3.section-subheading.text-muted Une collection d'articles sur différents sujets de l'univers digital 
                     .row.gx-4.gx-lg-5.justify-content-center
                         .col-md-10.col-lg-8.col-xl-7#posts-container
                             if posts
@@ -22,23 +20,18 @@ block content
                                     .post-preview
                                         .row 
                                             .col-md-8
-                                                h4.post-title=  post.title
+                                                h4.mb-2.post-title=  post.title
                                                 p.post-subtitle= post.content
-                                                .d-flex.justify-content-start.mb-4
-                                                    a.text-uppercase(href=`/blog/${post.slug}`) Lire la suite →
                                             .col-md-4 
-                                                img.img-fluid.img-preview(src=`/img/blog/${post.img}` alt="...") 
-                                        p.post-meta Publié par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
-                                        if currentUser
-                                            if editable && post.author._id.toString() === currentUser._id.toString()
-                                                .d-flex.flex-row.justify-content-center
-                                                    a(class="fas fa-edit pe-2 text-info" href="/blog/edit/"+ post._id)
-                                                    i(class="fas fa-minus-circle text-danger pointer-cursor" postid=post._id)
+                                                img.img-fluid.img-preview(src=`${post.img}` alt="...") 
+                                        p.post-meta.mt-2.text-muted Publié par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
+                                        a.text-uppercase(href=`/blog/${post.slug}`) Lire la suite →
                                             hr.article-divider.my-4
-                                            .d-flex.justify-content-end.mb-4.d-none 
-                                                a.btn.btn-primary.text-uppercase(href="#!") Anciens articles →
-                                            if currentUser.role === 1
-                                                a(href=("blog/new")) Écrire un nouvel article
+                            .d-flex.justify-content-end.mb-4.d-none 
+                                a.btn.btn-primary.text-uppercase(href="#!") Anciens articles →
+                            if currentUser    
+                                if currentUser.role === 1
+                                    a(href=("blog/new")) Écrire un nouvel article
     include ../includes/footer.pug
     include ../includes/scripts.pug
     script(src="/js/blog-mainpage.js")

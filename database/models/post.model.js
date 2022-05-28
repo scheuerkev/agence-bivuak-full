@@ -31,6 +31,9 @@ const postSchema = schema({
     required: true,
     default: Date.now,
   },
+  updatedAt: {
+    type: Date,
+  },
   slug: {
     type: String,
     required: true,
