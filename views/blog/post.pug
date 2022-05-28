@@ -16,7 +16,7 @@ block content
                     hr.divider.my-2
                 .row.gx-4.gx-lg-5.justify-content-center
                     .col-sm-8.mt-5 
-                    img.img-fluid.mx-auto(src=`/img/blog/${post.img}` alt="La photo à la une de l'article")
+                    img.img-fluid.mx-auto(src=`${post.img}` alt="La photo à la une de l'article")
                     .content.mt-5
                         | !{post.sanitizedHtml}
                     hr.divider

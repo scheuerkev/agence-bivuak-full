@@ -6,7 +6,7 @@ exports.getAllPosts = () => {
 
 exports.getOnePost = (postId) => {
   return Post.findById(postId).exec();
-}
+};
 
 exports.getOnePostWithAuthor = (slug) => {
   return Post.findOne({ slug: slug }).populate("author").exec();
@@ -14,7 +14,6 @@ exports.getOnePostWithAuthor = (slug) => {
 
 exports.createPost = (post) => {
   const newPost = new Post(post);
-  console.log("in query");
   return newPost.save();
 };
 

@@ -1,6 +1,7 @@
 const Post = require("../database/models/post.model");
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
 const moment = require("moment");
 
 const {
@@ -121,7 +122,7 @@ exports.updateHeroImage = [
       const postId = req.params.postId;
       console.log(postId);
       const post = await getOnePost(postId);
-      post.img = `${req.file.filename}`;
+      post.img = `/img/blog/${req.file.filename}`;
       await post.save();
       res.redirect("/blog");
     } catch (e) {
@@ -133,7 +134,12 @@ exports.updateHeroImage = [
 exports.postDelete = async (req, res, next) => {
   try {
     const postId = req.params.postId;
-    await deletePost(postId);
+    const post = await getOnePost(postId);
+    const filename = post.img.split("/img/blog/")[1];
+    console.log();
+    fs.unlink(`public/img/blog/${filename}`, async () => {
+      await deletePost(postId);
+    });
     const posts = await getPostsWithAuthor();
     res.render("blog/index", {
       posts,
