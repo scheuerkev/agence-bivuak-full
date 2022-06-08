@@ -8,7 +8,7 @@
   --ab-body-color: hsl(340, 23%, 98%);
   --ab-black: #212529;
   --ab-navbar-color: hsl(0, 0%, 99%);
-  --ab-salmon-pink: #b65454;
+  --ab-salmon-pink: hsl(0, 40%, 52%);
   --ab-grey: hsl(0, 0%, 45%);
   --ab-navbar-boxshadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   --ab-basic-smooth: all 270ms ease-in;
@@ -775,4 +775,15 @@ section#blog {
     background-size: 15px;
     background-position-x: 95%;
 
+}
+
+.form-errors-infos {
+  color: hsl(0, 40%, 75%);
+  
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.not-valid {
+  background-color: antiquewhite;
 }

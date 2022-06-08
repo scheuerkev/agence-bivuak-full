@@ -45,7 +45,7 @@ exports.postsList = async (req, res, next) => {
 exports.postById = async (req, res, next) => {
   try {
     const slug = req.params.slug;
-    req.user ? (currentUser = req.user) : (currentUser = {});
+    req.user ? (currentUser = req.user) : (currentUser = null);
     const post = await getOnePostWithAuthor(slug);
     res.render("blog/post", {
       post,
