@@ -15,7 +15,7 @@ block content
                     .card.border-0.shadow.my-5
                         .card-body.p-4.p-sm-5
                             h3.card-title.text-center.mb-5.fw-light.fs-5 S'identifier sur l'Agence Bivuak
-                            form(novalidate)
+                            form#authForm(novalidate)
                             .form-floating.mb-3
                                 input.needs-validation.form-control#floatingInput(required type="email" name="email" placeholder="name@example.com")
                                 label(for="floatingInput") Adresse email

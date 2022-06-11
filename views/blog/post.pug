@@ -5,22 +5,20 @@ block content
         .container.px-4.px-lg-5
             .row.gx-4.gx-5-lg.align-items-center.justify-content-between.text-center.flex-column
                 .col-lg-8 
-                    h2.master-head--subheading.text-uppercase.font-weight-bold.text-dark Agence Bivuak
+                    h2.master-head--subheading.text-uppercase.font-weight-bold.text-dark Le blog de l'Agence Bivuak
                     hr.divider.my-1.my-xs-3
-                    h1.master-head--heading.text-dark Article 
+                    h1.master-head--heading.text-dark= post.title 
     main
-        section.page-section#blog
+        section.page-section#blog.py-4
             .container.px-4.px-lg-5
                 if post
-                    h2.mt-0.text-center= post.title
-                    hr.divider.my-2
                 .row.gx-4.gx-lg-5.justify-content-center
-                    .col-sm-8.mt-5
-                    
+                    .col-sm-8.mt-5         
                     img.img-fluid.mx-auto(src=`${post.img}` alt="La photo à la une de l'article")
                     .content.mt-5
                         | !{post.sanitizedHtml}
-                    p.fst-italic.mt-5 Rédigé par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
+                    hr.article-divider.mb-4.w-50
+                    p.fst-italic Rédigé par !{post.author.username} le !{post.createdAt.toLocaleDateString()}
                     if post.updatedAt
                         p Modifié le !{post.updatedAt.toLocaleDateString()}
                 .row.mt-5

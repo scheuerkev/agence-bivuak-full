@@ -1,18 +1,16 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-  const contactForm = document.querySelector("#contactForm");
-  const submitButton = document.querySelector("#submitButton");
+  const authForm = document.querySelector("#authForm");
+  const submitButton = document.querySelector("#sendAuthBtn");
 
   const inputs = document.querySelectorAll(".form-control");
 
-  if (contactForm && submitButton) {
+  if (authForm && submitButton) {
     submitButton.addEventListener("click", ($e) => {
       $e.preventDefault();
 
       const handleSubmit = async () => {
-        const name = inputs[0].value;
-        const email = inputs[1].value;
-        const phone = inputs[2].value;
-        const message = inputs[3].value;
+        const email = inputs[0].value;
+        const password = inputs[1].value;
 
         try {
           // make axios post request

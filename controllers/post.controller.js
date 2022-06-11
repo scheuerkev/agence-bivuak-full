@@ -3,6 +3,10 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const moment = require("moment");
+const marked = require("marked");
+const createDomPurifier = require("dompurify");
+const { JSDOM } = require("jsdom");
+const dompurify = createDomPurifier(new JSDOM().window);
 
 const {
   getAllPosts,
@@ -101,7 +105,12 @@ exports.postUpdate = async (req, res, next) => {
   const postId = req.params.postId;
   try {
     const body = req.body;
-    await updatePost(postId, { ...body, updatedAt: Date.now() });
+    const sanitizedHtml = dompurify.sanitize(marked.parse(body.markdown));
+    await updatePost(postId, {
+      ...body,
+      sanitizedHtml,
+      updatedAt: moment().startOf("hour").fromNow(),
+    });
     res.redirect("/blog");
   } catch (e) {
     const errors = Object.keys(e.erros).map((k) => e.errors[k].message);
@@ -120,7 +129,6 @@ exports.updateHeroImage = [
   async (req, res, next) => {
     try {
       const postId = req.params.postId;
-      console.log(postId);
       const post = await getOnePost(postId);
       post.img = `/img/blog/${req.file.filename}`;
       await post.save();

@@ -78,6 +78,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
           }
           window.location.href = "/blog";
         } catch (error) {
+          console.log(error);
           const e = error.response.data.message;
           Swal.fire({
             icon: "error",

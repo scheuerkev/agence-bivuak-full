@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   //Regexp
   const nameChecker = /^[a-zà-ú\s-]+$/gi;
   const emailChecker = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  const phoneChecker = /^(?:(?:\+|00)33)\s*[0-9]$/;
+  const phoneChecker = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
 
   //DOM Selectors
   const contactForm = document.querySelector("#contactForm");
@@ -66,9 +66,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             text: "Nous revenons vers vous très rapidement, voici un petit cookie pour patienter 🍪",
             confirmButtonColor: "#016b6e",
           });
-          for (let i = 0; i < inputs.length; i++) {
-            inputs[i].value = "";
-          }
+          inputs.forEach((element) => (element.value = ""));
         } catch (error) {
           const errors = error.response.data.errors;
           Swal.fire({
