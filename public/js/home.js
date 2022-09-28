@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   //Regexp
-  const nameChecker = /^[a-zà-ú\s-]+$/gi;
+  const nameChecker = /^[A-zÀ-ú\s]*$/;
+  const noNumbers = /^([^0-9]*)$/;
   const emailChecker = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const phoneChecker = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
 
@@ -12,10 +13,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   //Check inputs value with regexp
   inputs[0].addEventListener("blur", () => {
-    !nameChecker.test(inputs[0].value)
+    !inputs[0].value.match(nameChecker)
       ? (inputs[0].classList.add("not-valid"),
         (errorsPlaceholder[0].innerHTML =
-          "Le nom ne peut pas comporter de chiffres ni de caractéres spéciaux"))
+          "Le nom ne peut pas comporter de chiffres"))
       : (inputs[0].classList.remove("not-valid"),
         (errorsPlaceholder[0].innerHTML = ""));
   });
@@ -30,7 +31,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
 
   inputs[2].addEventListener("blur", () => {
-    !phoneChecker.test(inputs[2].value)
+    !inputs[2].value.match(phoneChecker)
       ? (inputs[2].classList.add("not-valid"),
         (errorsPlaceholder[2].innerHTML =
           "Le format du numéro de téléphone n'est pas valide"))
